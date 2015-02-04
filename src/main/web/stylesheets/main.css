@@ -1,0 +1,31 @@
+.passed1 {
+    color: #41A317;
+}
+
+a.passed1:hover {
+    color: #348017;
+}
+
+.failed {
+    color: #FF2400;
+}
+
+a.failed:hover {
+    color: #E41B17;
+}
+
+.skipped {
+    color: #B6B6B4;
+}
+
+.undefined {
+    color: #B6B6B4;
+}
+
+.selected {
+    font-weight: bold;
+}
+
+a {
+    color: inherit;
+}

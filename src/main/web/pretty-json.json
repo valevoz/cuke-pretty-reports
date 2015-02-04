@@ -1,0 +1,1633 @@
+[
+  {
+    "id": "error-in-example-table",
+    "description": "As a User\r\nI want to action\r\nSo that benefit",
+    "name": "Error in example table",
+    "keyword": "Feature",
+    "line": 1,
+    "elements": [
+      {
+        "id": "error-in-example-table;a-+-b",
+        "description": "",
+        "name": "A + B",
+        "keyword": "Scenario Outline",
+        "line": 6,
+        "steps": [
+          {
+            "name": "\u003ca\u003e and \u003cb\u003e as input",
+            "keyword": "Given ",
+            "line": 7
+          },
+          {
+            "name": "action",
+            "keyword": "When ",
+            "line": 8
+          },
+          {
+            "name": "the result should equal to \u003csum\u003e",
+            "keyword": "Then ",
+            "line": 9
+          }
+        ],
+        "examples": [
+          {
+            "id": "error-in-example-table;a-+-b;",
+            "description": "",
+            "name": "",
+            "keyword": "Examples",
+            "line": 11,
+            "rows": [
+              {
+                "id": "error-in-example-table;a-+-b;;1",
+                "cells": [
+                  "a",
+                  "b",
+                  "sum"
+                ],
+                "line": 12
+              },
+              {
+                "id": "error-in-example-table;a-+-b;;2",
+                "cells": [
+                  "1",
+                  "1",
+                  "2"
+                ],
+                "line": 13
+              },
+              {
+                "id": "error-in-example-table;a-+-b;;3",
+                "cells": [
+                  "2",
+                  "2",
+                  "5"
+                ],
+                "line": 14
+              }
+            ]
+          }
+        ],
+        "type": "scenario_outline"
+      },
+      {
+        "id": "error-in-example-table;a-+-b;;2",
+        "description": "",
+        "name": "A + B",
+        "keyword": "Scenario Outline",
+        "line": 13,
+        "steps": [
+          {
+            "result": {
+              "duration": 171273357,
+              "status": "passed"
+            },
+            "name": "1 and 1 as input",
+            "keyword": "Given ",
+            "line": 7,
+            "match": {
+              "arguments": [
+                {
+                  "val": "1",
+                  "offset": 0
+                },
+                {
+                  "val": "1",
+                  "offset": 6
+                }
+              ],
+              "location": "FancyStepDefinition.scala:10"
+            },
+            "matchedColumns": [
+              0,
+              1
+            ]
+          },
+          {
+            "result": {
+              "duration": 80053,
+              "status": "passed"
+            },
+            "name": "action",
+            "keyword": "When ",
+            "line": 8,
+            "match": {
+              "location": "FancyStepDefinition.scala:15"
+            }
+          },
+          {
+            "result": {
+              "duration": 3095803,
+              "status": "passed"
+            },
+            "name": "the result should equal to 2",
+            "keyword": "Then ",
+            "line": 9,
+            "match": {
+              "arguments": [
+                {
+                  "val": "2",
+                  "offset": 27
+                }
+              ],
+              "location": "FancyStepDefinition.scala:18"
+            },
+            "matchedColumns": [
+              2
+            ]
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "id": "error-in-example-table;a-+-b;;3",
+        "description": "",
+        "name": "A + B",
+        "keyword": "Scenario Outline",
+        "line": 14,
+        "steps": [
+          {
+            "result": {
+              "duration": 215528,
+              "status": "passed"
+            },
+            "name": "2 and 2 as input",
+            "keyword": "Given ",
+            "line": 7,
+            "match": {
+              "arguments": [
+                {
+                  "val": "2",
+                  "offset": 0
+                },
+                {
+                  "val": "2",
+                  "offset": 6
+                }
+              ],
+              "location": "FancyStepDefinition.scala:10"
+            },
+            "matchedColumns": [
+              0,
+              1
+            ]
+          },
+          {
+            "result": {
+              "duration": 34485,
+              "status": "passed"
+            },
+            "name": "action",
+            "keyword": "When ",
+            "line": 8,
+            "match": {
+              "location": "FancyStepDefinition.scala:15"
+            }
+          },
+          {
+            "result": {
+              "duration": 843639,
+              "status": "failed",
+              "error_message": "java.lang.AssertionError: expected:\u003c5\u003e but was:\u003c4\u003e\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat org.junit.Assert.failNotEquals(Assert.java:743)\r\n\tat org.junit.Assert.assertEquals(Assert.java:118)\r\n\tat org.junit.Assert.assertEquals(Assert.java:555)\r\n\tat org.junit.Assert.assertEquals(Assert.java:542)\r\n\tat FancyStepDefinition$$anonfun$3.apply$mcVI$sp(FancyStepDefinition.scala:19)\r\n\tat FancyStepDefinition$$anonfun$3.apply(FancyStepDefinition.scala:18)\r\n\tat FancyStepDefinition$$anonfun$3.apply(FancyStepDefinition.scala:18)\r\n\tat cucumber.api.scala.ScalaDsl$StepBody$$anonfun$apply$2.applyOrElse(ScalaDsl.scala:97)\r\n\tat cucumber.api.scala.ScalaDsl$StepBody$$anonfun$apply$2.applyOrElse(ScalaDsl.scala:95)\r\n\tat scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:36)\r\n\tat cucumber.runtime.scala.ScalaStepDefinition.execute(ScalaStepDefinition.scala:71)\r\n\tat cucumber.runtime.StepDefinitionMatch.runStep(StepDefinitionMatch.java:37)\r\n\tat cucumber.runtime.Runtime.runStep(Runtime.java:298)\r\n\tat cucumber.runtime.model.StepContainer.runStep(StepContainer.java:44)\r\n\tat cucumber.runtime.model.StepContainer.runSteps(StepContainer.java:39)\r\n\tat cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:48)\r\n\tat cucumber.runtime.junit.ExecutionUnitRunner.run(ExecutionUnitRunner.java:91)\r\n\tat org.junit.runners.Suite.runChild(Suite.java:127)\r\n\tat org.junit.runners.Suite.runChild(Suite.java:26)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:309)\r\n\tat cucumber.runtime.junit.ExamplesRunner.run(ExamplesRunner.java:59)\r\n\tat org.junit.runners.Suite.runChild(Suite.java:127)\r\n\tat org.junit.runners.Suite.runChild(Suite.java:26)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:309)\r\n\tat cucumber.runtime.junit.ScenarioOutlineRunner.run(ScenarioOutlineRunner.java:53)\r\n\tat cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:63)\r\n\tat cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:18)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:309)\r\n\tat cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:70)\r\n\tat cucumber.api.junit.Cucumber.runChild(Cucumber.java:93)\r\n\tat cucumber.api.junit.Cucumber.runChild(Cucumber.java:37)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:309)\r\n\tat cucumber.api.junit.Cucumber.run(Cucumber.java:98)\r\n\tat org.junit.runner.JUnitCore.run(JUnitCore.java:160)\r\n\tat com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:74)\r\n\tat com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:211)\r\n\tat com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:67)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)\r\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\r\n\tat java.lang.reflect.Method.invoke(Method.java:606)\r\n\tat com.intellij.rt.execution.application.AppMain.main(AppMain.java:134)\r\n\tat ✽.Then the result should equal to 5(errors/error_in_example.feature:9)\r\n"
+            },
+            "name": "the result should equal to 5",
+            "keyword": "Then ",
+            "line": 9,
+            "match": {
+              "arguments": [
+                {
+                  "val": "5",
+                  "offset": 27
+                }
+              ],
+              "location": "FancyStepDefinition.scala:18"
+            },
+            "matchedColumns": [
+              2
+            ]
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "uri": "errors/error_in_example.feature"
+  },
+  {
+    "id": "error-in-scenario",
+    "description": "As a User\r\nI want to action\r\nSo that benefit",
+    "name": "Error in scenario",
+    "keyword": "Feature",
+    "line": 1,
+    "elements": [
+      {
+        "id": "error-in-scenario;a-+-b",
+        "description": "",
+        "name": "A + B",
+        "keyword": "Scenario",
+        "line": 6,
+        "steps": [
+          {
+            "result": {
+              "duration": 216759,
+              "status": "passed"
+            },
+            "name": "2 and 2 as input",
+            "keyword": "Given ",
+            "line": 7,
+            "match": {
+              "arguments": [
+                {
+                  "val": "2",
+                  "offset": 0
+                },
+                {
+                  "val": "2",
+                  "offset": 6
+                }
+              ],
+              "location": "FancyStepDefinition.scala:10"
+            }
+          },
+          {
+            "result": {
+              "duration": 45979,
+              "status": "passed"
+            },
+            "name": "action",
+            "keyword": "When ",
+            "line": 8,
+            "match": {
+              "location": "FancyStepDefinition.scala:15"
+            }
+          },
+          {
+            "result": {
+              "duration": 333761,
+              "status": "failed",
+              "error_message": "java.lang.AssertionError: expected:\u003c5\u003e but was:\u003c4\u003e\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat org.junit.Assert.failNotEquals(Assert.java:743)\r\n\tat org.junit.Assert.assertEquals(Assert.java:118)\r\n\tat org.junit.Assert.assertEquals(Assert.java:555)\r\n\tat org.junit.Assert.assertEquals(Assert.java:542)\r\n\tat FancyStepDefinition$$anonfun$3.apply$mcVI$sp(FancyStepDefinition.scala:19)\r\n\tat FancyStepDefinition$$anonfun$3.apply(FancyStepDefinition.scala:18)\r\n\tat FancyStepDefinition$$anonfun$3.apply(FancyStepDefinition.scala:18)\r\n\tat cucumber.api.scala.ScalaDsl$StepBody$$anonfun$apply$2.applyOrElse(ScalaDsl.scala:97)\r\n\tat cucumber.api.scala.ScalaDsl$StepBody$$anonfun$apply$2.applyOrElse(ScalaDsl.scala:95)\r\n\tat scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:36)\r\n\tat cucumber.runtime.scala.ScalaStepDefinition.execute(ScalaStepDefinition.scala:71)\r\n\tat cucumber.runtime.StepDefinitionMatch.runStep(StepDefinitionMatch.java:37)\r\n\tat cucumber.runtime.Runtime.runStep(Runtime.java:298)\r\n\tat cucumber.runtime.model.StepContainer.runStep(StepContainer.java:44)\r\n\tat cucumber.runtime.model.StepContainer.runSteps(StepContainer.java:39)\r\n\tat cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:48)\r\n\tat cucumber.runtime.junit.ExecutionUnitRunner.run(ExecutionUnitRunner.java:91)\r\n\tat cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:63)\r\n\tat cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:18)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:309)\r\n\tat cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:70)\r\n\tat cucumber.api.junit.Cucumber.runChild(Cucumber.java:93)\r\n\tat cucumber.api.junit.Cucumber.runChild(Cucumber.java:37)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:309)\r\n\tat cucumber.api.junit.Cucumber.run(Cucumber.java:98)\r\n\tat org.junit.runner.JUnitCore.run(JUnitCore.java:160)\r\n\tat com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:74)\r\n\tat com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:211)\r\n\tat com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:67)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)\r\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\r\n\tat java.lang.reflect.Method.invoke(Method.java:606)\r\n\tat com.intellij.rt.execution.application.AppMain.main(AppMain.java:134)\r\n\tat ✽.Then the result should equal to 5(errors/error_in_scenario.feature:9)\r\n"
+            },
+            "name": "the result should equal to 5",
+            "keyword": "Then ",
+            "line": 9,
+            "match": {
+              "arguments": [
+                {
+                  "val": "5",
+                  "offset": 27
+                }
+              ],
+              "location": "FancyStepDefinition.scala:18"
+            }
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "uri": "errors/error_in_scenario.feature"
+  },
+  {
+    "id": "skipped-step",
+    "description": "As a User\r\nI want to action\r\nSo that benefit",
+    "name": "Skipped step",
+    "keyword": "Feature",
+    "line": 1,
+    "elements": [
+      {
+        "id": "skipped-step;a-+-b",
+        "description": "",
+        "name": "A + B",
+        "keyword": "Scenario Outline",
+        "line": 6,
+        "steps": [
+          {
+            "name": "\u003ca\u003e and \u003cb\u003e as input",
+            "keyword": "Given ",
+            "line": 7
+          },
+          {
+            "name": "skipped action",
+            "keyword": "When ",
+            "line": 8
+          },
+          {
+            "name": "the result should equal to \u003csum\u003e",
+            "keyword": "Then ",
+            "line": 9
+          }
+        ],
+        "examples": [
+          {
+            "id": "skipped-step;a-+-b;",
+            "description": "",
+            "name": "",
+            "keyword": "Examples",
+            "line": 11,
+            "rows": [
+              {
+                "id": "skipped-step;a-+-b;;1",
+                "cells": [
+                  "a",
+                  "b",
+                  "sum"
+                ],
+                "line": 12
+              },
+              {
+                "id": "skipped-step;a-+-b;;2",
+                "cells": [
+                  "1",
+                  "1",
+                  "2"
+                ],
+                "line": 13
+              },
+              {
+                "id": "skipped-step;a-+-b;;3",
+                "cells": [
+                  "2",
+                  "2",
+                  "5"
+                ],
+                "line": 14
+              }
+            ]
+          }
+        ],
+        "type": "scenario_outline"
+      },
+      {
+        "id": "skipped-step;a-+-b;;2",
+        "description": "",
+        "name": "A + B",
+        "keyword": "Scenario Outline",
+        "line": 13,
+        "steps": [
+          {
+            "result": {
+              "duration": 204854,
+              "status": "passed"
+            },
+            "name": "1 and 1 as input",
+            "keyword": "Given ",
+            "line": 7,
+            "match": {
+              "arguments": [
+                {
+                  "val": "1",
+                  "offset": 0
+                },
+                {
+                  "val": "1",
+                  "offset": 6
+                }
+              ],
+              "location": "FancyStepDefinition.scala:10"
+            },
+            "matchedColumns": [
+              0,
+              1
+            ]
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "name": "skipped action",
+            "keyword": "When ",
+            "line": 8,
+            "match": {}
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "name": "the result should equal to 2",
+            "keyword": "Then ",
+            "line": 9,
+            "match": {
+              "arguments": [
+                {
+                  "val": "2",
+                  "offset": 27
+                }
+              ],
+              "location": "FancyStepDefinition.scala:18"
+            },
+            "matchedColumns": [
+              2
+            ]
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "id": "skipped-step;a-+-b;;3",
+        "description": "",
+        "name": "A + B",
+        "keyword": "Scenario Outline",
+        "line": 14,
+        "steps": [
+          {
+            "result": {
+              "duration": 216349,
+              "status": "passed"
+            },
+            "name": "2 and 2 as input",
+            "keyword": "Given ",
+            "line": 7,
+            "match": {
+              "arguments": [
+                {
+                  "val": "2",
+                  "offset": 0
+                },
+                {
+                  "val": "2",
+                  "offset": 6
+                }
+              ],
+              "location": "FancyStepDefinition.scala:10"
+            },
+            "matchedColumns": [
+              0,
+              1
+            ]
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "name": "skipped action",
+            "keyword": "When ",
+            "line": 8,
+            "match": {}
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "name": "the result should equal to 5",
+            "keyword": "Then ",
+            "line": 9,
+            "match": {
+              "arguments": [
+                {
+                  "val": "5",
+                  "offset": 27
+                }
+              ],
+              "location": "FancyStepDefinition.scala:18"
+            },
+            "matchedColumns": [
+              2
+            ]
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "uri": "errors/skipped.feature"
+  },
+  {
+    "id": "mix-of-scenarios",
+    "description": "As a User\r\nI want to action\r\nSo that benefit",
+    "name": "Mix Of Scenarios",
+    "keyword": "Feature",
+    "line": 1,
+    "elements": [
+      {
+        "id": "mix-of-scenarios;a-+-b",
+        "description": "",
+        "name": "A + B",
+        "keyword": "Scenario",
+        "line": 6,
+        "steps": [
+          {
+            "result": {
+              "duration": 224149,
+              "status": "passed"
+            },
+            "name": "2 and 2 as input",
+            "keyword": "Given ",
+            "line": 7,
+            "match": {
+              "arguments": [
+                {
+                  "val": "2",
+                  "offset": 0
+                },
+                {
+                  "val": "2",
+                  "offset": 6
+                }
+              ],
+              "location": "FancyStepDefinition.scala:10"
+            }
+          },
+          {
+            "result": {
+              "duration": 47211,
+              "status": "passed"
+            },
+            "name": "action",
+            "keyword": "When ",
+            "line": 8,
+            "match": {
+              "location": "FancyStepDefinition.scala:15"
+            }
+          },
+          {
+            "result": {
+              "duration": 331298,
+              "status": "failed",
+              "error_message": "java.lang.AssertionError: expected:\u003c5\u003e but was:\u003c4\u003e\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat org.junit.Assert.failNotEquals(Assert.java:743)\r\n\tat org.junit.Assert.assertEquals(Assert.java:118)\r\n\tat org.junit.Assert.assertEquals(Assert.java:555)\r\n\tat org.junit.Assert.assertEquals(Assert.java:542)\r\n\tat FancyStepDefinition$$anonfun$3.apply$mcVI$sp(FancyStepDefinition.scala:19)\r\n\tat FancyStepDefinition$$anonfun$3.apply(FancyStepDefinition.scala:18)\r\n\tat FancyStepDefinition$$anonfun$3.apply(FancyStepDefinition.scala:18)\r\n\tat cucumber.api.scala.ScalaDsl$StepBody$$anonfun$apply$2.applyOrElse(ScalaDsl.scala:97)\r\n\tat cucumber.api.scala.ScalaDsl$StepBody$$anonfun$apply$2.applyOrElse(ScalaDsl.scala:95)\r\n\tat scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:36)\r\n\tat cucumber.runtime.scala.ScalaStepDefinition.execute(ScalaStepDefinition.scala:71)\r\n\tat cucumber.runtime.StepDefinitionMatch.runStep(StepDefinitionMatch.java:37)\r\n\tat cucumber.runtime.Runtime.runStep(Runtime.java:298)\r\n\tat cucumber.runtime.model.StepContainer.runStep(StepContainer.java:44)\r\n\tat cucumber.runtime.model.StepContainer.runSteps(StepContainer.java:39)\r\n\tat cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:48)\r\n\tat cucumber.runtime.junit.ExecutionUnitRunner.run(ExecutionUnitRunner.java:91)\r\n\tat cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:63)\r\n\tat cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:18)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:309)\r\n\tat cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:70)\r\n\tat cucumber.api.junit.Cucumber.runChild(Cucumber.java:93)\r\n\tat cucumber.api.junit.Cucumber.runChild(Cucumber.java:37)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:309)\r\n\tat cucumber.api.junit.Cucumber.run(Cucumber.java:98)\r\n\tat org.junit.runner.JUnitCore.run(JUnitCore.java:160)\r\n\tat com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:74)\r\n\tat com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:211)\r\n\tat com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:67)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)\r\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\r\n\tat java.lang.reflect.Method.invoke(Method.java:606)\r\n\tat com.intellij.rt.execution.application.AppMain.main(AppMain.java:134)\r\n\tat ✽.Then the result should equal to 5(multi/scenario_mix.feature:9)\r\n"
+            },
+            "name": "the result should equal to 5",
+            "keyword": "Then ",
+            "line": 9,
+            "match": {
+              "arguments": [
+                {
+                  "val": "5",
+                  "offset": 27
+                }
+              ],
+              "location": "FancyStepDefinition.scala:18"
+            }
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "id": "mix-of-scenarios;x-+-y",
+        "description": "",
+        "name": "X + Y",
+        "keyword": "Scenario Outline",
+        "line": 12,
+        "steps": [
+          {
+            "name": "\u003ca\u003e and \u003cb\u003e as input",
+            "keyword": "Given ",
+            "line": 13
+          },
+          {
+            "name": "action",
+            "keyword": "When ",
+            "line": 14
+          },
+          {
+            "name": "the result should equal to \u003csum\u003e",
+            "keyword": "Then ",
+            "line": 15
+          }
+        ],
+        "examples": [
+          {
+            "id": "mix-of-scenarios;x-+-y;",
+            "description": "",
+            "name": "",
+            "keyword": "Examples",
+            "line": 17,
+            "rows": [
+              {
+                "id": "mix-of-scenarios;x-+-y;;1",
+                "cells": [
+                  "a",
+                  "b",
+                  "sum"
+                ],
+                "line": 18
+              },
+              {
+                "id": "mix-of-scenarios;x-+-y;;2",
+                "cells": [
+                  "1",
+                  "2",
+                  "3"
+                ],
+                "line": 19
+              },
+              {
+                "id": "mix-of-scenarios;x-+-y;;3",
+                "cells": [
+                  "999",
+                  "1",
+                  "1000"
+                ],
+                "line": 20
+              }
+            ]
+          }
+        ],
+        "type": "scenario_outline"
+      },
+      {
+        "id": "mix-of-scenarios;x-+-y;;2",
+        "description": "",
+        "name": "X + Y",
+        "keyword": "Scenario Outline",
+        "line": 19,
+        "steps": [
+          {
+            "result": {
+              "duration": 224560,
+              "status": "passed"
+            },
+            "name": "1 and 2 as input",
+            "keyword": "Given ",
+            "line": 13,
+            "match": {
+              "arguments": [
+                {
+                  "val": "1",
+                  "offset": 0
+                },
+                {
+                  "val": "2",
+                  "offset": 6
+                }
+              ],
+              "location": "FancyStepDefinition.scala:10"
+            },
+            "matchedColumns": [
+              0,
+              1
+            ]
+          },
+          {
+            "result": {
+              "duration": 45569,
+              "status": "passed"
+            },
+            "name": "action",
+            "keyword": "When ",
+            "line": 14,
+            "match": {
+              "location": "FancyStepDefinition.scala:15"
+            }
+          },
+          {
+            "result": {
+              "duration": 140811,
+              "status": "passed"
+            },
+            "name": "the result should equal to 3",
+            "keyword": "Then ",
+            "line": 15,
+            "match": {
+              "arguments": [
+                {
+                  "val": "3",
+                  "offset": 27
+                }
+              ],
+              "location": "FancyStepDefinition.scala:18"
+            },
+            "matchedColumns": [
+              2
+            ]
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "id": "mix-of-scenarios;x-+-y;;3",
+        "description": "",
+        "name": "X + Y",
+        "keyword": "Scenario Outline",
+        "line": 20,
+        "steps": [
+          {
+            "result": {
+              "duration": 229076,
+              "status": "passed"
+            },
+            "name": "999 and 1 as input",
+            "keyword": "Given ",
+            "line": 13,
+            "match": {
+              "arguments": [
+                {
+                  "val": "999",
+                  "offset": 0
+                },
+                {
+                  "val": "1",
+                  "offset": 8
+                }
+              ],
+              "location": "FancyStepDefinition.scala:10"
+            },
+            "matchedColumns": [
+              0,
+              1
+            ]
+          },
+          {
+            "result": {
+              "duration": 47211,
+              "status": "passed"
+            },
+            "name": "action",
+            "keyword": "When ",
+            "line": 14,
+            "match": {
+              "location": "FancyStepDefinition.scala:15"
+            }
+          },
+          {
+            "result": {
+              "duration": 153538,
+              "status": "passed"
+            },
+            "name": "the result should equal to 1000",
+            "keyword": "Then ",
+            "line": 15,
+            "match": {
+              "arguments": [
+                {
+                  "val": "1000",
+                  "offset": 27
+                }
+              ],
+              "location": "FancyStepDefinition.scala:18"
+            },
+            "matchedColumns": [
+              2
+            ]
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "uri": "multi/scenario_mix.feature"
+  },
+  {
+    "id": "two-scenarios",
+    "description": "As a User\r\nI want to action\r\nSo that benefit",
+    "name": "Two scenarios",
+    "keyword": "Feature",
+    "line": 1,
+    "elements": [
+      {
+        "id": "two-scenarios;a-+-b",
+        "description": "",
+        "name": "A + B",
+        "keyword": "Scenario Outline",
+        "line": 6,
+        "steps": [
+          {
+            "name": "\u003ca\u003e and \u003cb\u003e as input",
+            "keyword": "Given ",
+            "line": 7
+          },
+          {
+            "name": "action",
+            "keyword": "When ",
+            "line": 8
+          },
+          {
+            "name": "the result should equal to \u003csum\u003e",
+            "keyword": "Then ",
+            "line": 9
+          }
+        ],
+        "examples": [
+          {
+            "id": "two-scenarios;a-+-b;",
+            "description": "",
+            "name": "",
+            "keyword": "Examples",
+            "line": 11,
+            "rows": [
+              {
+                "id": "two-scenarios;a-+-b;;1",
+                "cells": [
+                  "a",
+                  "b",
+                  "sum"
+                ],
+                "line": 12
+              },
+              {
+                "id": "two-scenarios;a-+-b;;2",
+                "cells": [
+                  "1",
+                  "1",
+                  "2"
+                ],
+                "line": 13
+              },
+              {
+                "id": "two-scenarios;a-+-b;;3",
+                "cells": [
+                  "2",
+                  "2",
+                  "4"
+                ],
+                "line": 14
+              }
+            ]
+          }
+        ],
+        "type": "scenario_outline"
+      },
+      {
+        "id": "two-scenarios;a-+-b;;2",
+        "description": "",
+        "name": "A + B",
+        "keyword": "Scenario Outline",
+        "line": 13,
+        "steps": [
+          {
+            "result": {
+              "duration": 215939,
+              "status": "passed"
+            },
+            "name": "1 and 1 as input",
+            "keyword": "Given ",
+            "line": 7,
+            "match": {
+              "arguments": [
+                {
+                  "val": "1",
+                  "offset": 0
+                },
+                {
+                  "val": "1",
+                  "offset": 6
+                }
+              ],
+              "location": "FancyStepDefinition.scala:10"
+            },
+            "matchedColumns": [
+              0,
+              1
+            ]
+          },
+          {
+            "result": {
+              "duration": 28326,
+              "status": "passed"
+            },
+            "name": "action",
+            "keyword": "When ",
+            "line": 8,
+            "match": {
+              "location": "FancyStepDefinition.scala:15"
+            }
+          },
+          {
+            "result": {
+              "duration": 126032,
+              "status": "passed"
+            },
+            "name": "the result should equal to 2",
+            "keyword": "Then ",
+            "line": 9,
+            "match": {
+              "arguments": [
+                {
+                  "val": "2",
+                  "offset": 27
+                }
+              ],
+              "location": "FancyStepDefinition.scala:18"
+            },
+            "matchedColumns": [
+              2
+            ]
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "id": "two-scenarios;a-+-b;;3",
+        "description": "",
+        "name": "A + B",
+        "keyword": "Scenario Outline",
+        "line": 14,
+        "steps": [
+          {
+            "result": {
+              "duration": 223739,
+              "status": "passed"
+            },
+            "name": "2 and 2 as input",
+            "keyword": "Given ",
+            "line": 7,
+            "match": {
+              "arguments": [
+                {
+                  "val": "2",
+                  "offset": 0
+                },
+                {
+                  "val": "2",
+                  "offset": 6
+                }
+              ],
+              "location": "FancyStepDefinition.scala:10"
+            },
+            "matchedColumns": [
+              0,
+              1
+            ]
+          },
+          {
+            "result": {
+              "duration": 41053,
+              "status": "passed"
+            },
+            "name": "action",
+            "keyword": "When ",
+            "line": 8,
+            "match": {
+              "location": "FancyStepDefinition.scala:15"
+            }
+          },
+          {
+            "result": {
+              "duration": 174475,
+              "status": "passed"
+            },
+            "name": "the result should equal to 4",
+            "keyword": "Then ",
+            "line": 9,
+            "match": {
+              "arguments": [
+                {
+                  "val": "4",
+                  "offset": 27
+                }
+              ],
+              "location": "FancyStepDefinition.scala:18"
+            },
+            "matchedColumns": [
+              2
+            ]
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "id": "two-scenarios;x-+-y",
+        "description": "",
+        "name": "X + Y",
+        "keyword": "Scenario Outline",
+        "line": 17,
+        "steps": [
+          {
+            "name": "\u003ca\u003e and \u003cb\u003e as input",
+            "keyword": "Given ",
+            "line": 18
+          },
+          {
+            "name": "action",
+            "keyword": "When ",
+            "line": 19
+          },
+          {
+            "name": "the result should equal to \u003csum\u003e",
+            "keyword": "Then ",
+            "line": 20
+          }
+        ],
+        "examples": [
+          {
+            "id": "two-scenarios;x-+-y;",
+            "description": "",
+            "name": "",
+            "keyword": "Examples",
+            "line": 22,
+            "rows": [
+              {
+                "id": "two-scenarios;x-+-y;;1",
+                "cells": [
+                  "a",
+                  "b",
+                  "sum"
+                ],
+                "line": 23
+              },
+              {
+                "id": "two-scenarios;x-+-y;;2",
+                "cells": [
+                  "1",
+                  "1",
+                  "2"
+                ],
+                "line": 24
+              },
+              {
+                "id": "two-scenarios;x-+-y;;3",
+                "cells": [
+                  "2",
+                  "2",
+                  "4"
+                ],
+                "line": 25
+              }
+            ]
+          }
+        ],
+        "type": "scenario_outline"
+      },
+      {
+        "id": "two-scenarios;x-+-y;;2",
+        "description": "",
+        "name": "X + Y",
+        "keyword": "Scenario Outline",
+        "line": 24,
+        "steps": [
+          {
+            "result": {
+              "duration": 216349,
+              "status": "passed"
+            },
+            "name": "1 and 1 as input",
+            "keyword": "Given ",
+            "line": 18,
+            "match": {
+              "arguments": [
+                {
+                  "val": "1",
+                  "offset": 0
+                },
+                {
+                  "val": "1",
+                  "offset": 6
+                }
+              ],
+              "location": "FancyStepDefinition.scala:10"
+            },
+            "matchedColumns": [
+              0,
+              1
+            ]
+          },
+          {
+            "result": {
+              "duration": 48853,
+              "status": "passed"
+            },
+            "name": "action",
+            "keyword": "When ",
+            "line": 19,
+            "match": {
+              "location": "FancyStepDefinition.scala:15"
+            }
+          },
+          {
+            "result": {
+              "duration": 142044,
+              "status": "passed"
+            },
+            "name": "the result should equal to 2",
+            "keyword": "Then ",
+            "line": 20,
+            "match": {
+              "arguments": [
+                {
+                  "val": "2",
+                  "offset": 27
+                }
+              ],
+              "location": "FancyStepDefinition.scala:18"
+            },
+            "matchedColumns": [
+              2
+            ]
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "id": "two-scenarios;x-+-y;;3",
+        "description": "",
+        "name": "X + Y",
+        "keyword": "Scenario Outline",
+        "line": 25,
+        "steps": [
+          {
+            "result": {
+              "duration": 206496,
+              "status": "passed"
+            },
+            "name": "2 and 2 as input",
+            "keyword": "Given ",
+            "line": 18,
+            "match": {
+              "arguments": [
+                {
+                  "val": "2",
+                  "offset": 0
+                },
+                {
+                  "val": "2",
+                  "offset": 6
+                }
+              ],
+              "location": "FancyStepDefinition.scala:10"
+            },
+            "matchedColumns": [
+              0,
+              1
+            ]
+          },
+          {
+            "result": {
+              "duration": 39000,
+              "status": "passed"
+            },
+            "name": "action",
+            "keyword": "When ",
+            "line": 19,
+            "match": {
+              "location": "FancyStepDefinition.scala:15"
+            }
+          },
+          {
+            "result": {
+              "duration": 172012,
+              "status": "passed"
+            },
+            "name": "the result should equal to 4",
+            "keyword": "Then ",
+            "line": 20,
+            "match": {
+              "arguments": [
+                {
+                  "val": "4",
+                  "offset": 27
+                }
+              ],
+              "location": "FancyStepDefinition.scala:18"
+            },
+            "matchedColumns": [
+              2
+            ]
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "uri": "multi/two_scenarios.feature"
+  },
+  {
+    "id": "background",
+    "description": "ToBeImplemented",
+    "name": "Background",
+    "keyword": "Feature",
+    "line": 1,
+    "elements": [
+      {
+        "id": "background;background",
+        "description": "",
+        "name": "Background",
+        "keyword": "Scenario",
+        "line": 4,
+        "steps": [
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "name": "z",
+            "keyword": "Given ",
+            "line": 5,
+            "match": {}
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "name": "x",
+            "keyword": "When ",
+            "line": 6,
+            "match": {}
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "name": "y",
+            "keyword": "Then ",
+            "line": 7,
+            "match": {}
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "uri": "single/extra/background.feature"
+  },
+  {
+    "id": "tag",
+    "description": "toBeImplemented",
+    "name": "Tag",
+    "keyword": "Feature",
+    "line": 1,
+    "elements": [
+      {
+        "id": "tag;tag",
+        "description": "",
+        "name": "Tag",
+        "keyword": "Scenario",
+        "line": 4,
+        "steps": [
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "name": "x",
+            "keyword": "Given ",
+            "line": 5,
+            "match": {}
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "name": "y",
+            "keyword": "When ",
+            "line": 6,
+            "match": {}
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "name": "z",
+            "keyword": "Then ",
+            "line": 7,
+            "match": {}
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "uri": "single/extra/tag.feature"
+  },
+  {
+    "id": "simple-scenario",
+    "description": "As a User\r\nI want to action\r\nSo that benefit",
+    "name": "Simple Scenario",
+    "keyword": "Feature",
+    "line": 1,
+    "elements": [
+      {
+        "id": "simple-scenario;addition",
+        "description": "",
+        "name": "Addition",
+        "keyword": "Scenario",
+        "line": 6,
+        "steps": [
+          {
+            "result": {
+              "duration": 194591,
+              "status": "passed"
+            },
+            "name": "111 and 222 as input",
+            "keyword": "Given ",
+            "line": 7,
+            "match": {
+              "arguments": [
+                {
+                  "val": "111",
+                  "offset": 0
+                },
+                {
+                  "val": "222",
+                  "offset": 8
+                }
+              ],
+              "location": "FancyStepDefinition.scala:10"
+            }
+          },
+          {
+            "result": {
+              "duration": 47621,
+              "status": "passed"
+            },
+            "name": "action",
+            "keyword": "When ",
+            "line": 8,
+            "match": {
+              "location": "FancyStepDefinition.scala:15"
+            }
+          },
+          {
+            "result": {
+              "duration": 126854,
+              "status": "passed"
+            },
+            "name": "the result should equal to 333",
+            "keyword": "Then ",
+            "line": 9,
+            "match": {
+              "arguments": [
+                {
+                  "val": "333",
+                  "offset": 27
+                }
+              ],
+              "location": "FancyStepDefinition.scala:18"
+            }
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "uri": "single/scenario.feature"
+  },
+  {
+    "id": "simple-scenario-outline",
+    "description": "As a User\r\nI want to action\r\nSo that benefit",
+    "name": "Simple Scenario Outline",
+    "keyword": "Feature",
+    "line": 1,
+    "elements": [
+      {
+        "id": "simple-scenario-outline;a-+-b",
+        "description": "",
+        "name": "A + B",
+        "keyword": "Scenario Outline",
+        "line": 6,
+        "steps": [
+          {
+            "name": "\u003ca\u003e and \u003cb\u003e as input",
+            "keyword": "Given ",
+            "line": 7
+          },
+          {
+            "name": "action",
+            "keyword": "When ",
+            "line": 8
+          },
+          {
+            "name": "the result should equal to \u003csum\u003e",
+            "keyword": "Then ",
+            "line": 9
+          }
+        ],
+        "examples": [
+          {
+            "id": "simple-scenario-outline;a-+-b;",
+            "description": "",
+            "name": "",
+            "keyword": "Examples",
+            "line": 11,
+            "rows": [
+              {
+                "id": "simple-scenario-outline;a-+-b;;1",
+                "cells": [
+                  "a",
+                  "b",
+                  "sum"
+                ],
+                "line": 12
+              },
+              {
+                "id": "simple-scenario-outline;a-+-b;;2",
+                "cells": [
+                  "1",
+                  "1",
+                  "2"
+                ],
+                "line": 13
+              },
+              {
+                "id": "simple-scenario-outline;a-+-b;;3",
+                "cells": [
+                  "2",
+                  "2",
+                  "5"
+                ],
+                "line": 14
+              },
+              {
+                "id": "simple-scenario-outline;a-+-b;;4",
+                "cells": [
+                  "3",
+                  "3",
+                  "9"
+                ],
+                "line": 15
+              }
+            ]
+          }
+        ],
+        "type": "scenario_outline"
+      },
+      {
+        "id": "simple-scenario-outline;a-+-b;;2",
+        "description": "",
+        "name": "A + B",
+        "keyword": "Scenario Outline",
+        "line": 13,
+        "steps": [
+          {
+            "result": {
+              "duration": 671626,
+              "status": "passed"
+            },
+            "name": "1 and 1 as input",
+            "keyword": "Given ",
+            "line": 7,
+            "match": {
+              "arguments": [
+                {
+                  "val": "1",
+                  "offset": 0
+                },
+                {
+                  "val": "1",
+                  "offset": 6
+                }
+              ],
+              "location": "FancyStepDefinition.scala:10"
+            },
+            "matchedColumns": [
+              0,
+              1
+            ]
+          },
+          {
+            "result": {
+              "duration": 45979,
+              "status": "passed"
+            },
+            "name": "action",
+            "keyword": "When ",
+            "line": 8,
+            "match": {
+              "location": "FancyStepDefinition.scala:15"
+            }
+          },
+          {
+            "result": {
+              "duration": 442961,
+              "status": "passed"
+            },
+            "name": "the result should equal to 2",
+            "keyword": "Then ",
+            "line": 9,
+            "match": {
+              "arguments": [
+                {
+                  "val": "2",
+                  "offset": 27
+                }
+              ],
+              "location": "FancyStepDefinition.scala:18"
+            },
+            "matchedColumns": [
+              2
+            ]
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "id": "simple-scenario-outline;a-+-b;;3",
+        "description": "",
+        "name": "A + B",
+        "keyword": "Scenario Outline",
+        "line": 14,
+        "steps": [
+          {
+            "result": {
+              "duration": 219223,
+              "status": "passed"
+            },
+            "name": "2 and 2 as input",
+            "keyword": "Given ",
+            "line": 7,
+            "match": {
+              "arguments": [
+                {
+                  "val": "2",
+                  "offset": 0
+                },
+                {
+                  "val": "2",
+                  "offset": 6
+                }
+              ],
+              "location": "FancyStepDefinition.scala:10"
+            },
+            "matchedColumns": [
+              0,
+              1
+            ]
+          },
+          {
+            "result": {
+              "duration": 59938,
+              "status": "passed"
+            },
+            "name": "action",
+            "keyword": "When ",
+            "line": 8,
+            "match": {
+              "location": "FancyStepDefinition.scala:15"
+            }
+          },
+          {
+            "result": {
+              "duration": 346077,
+              "status": "failed",
+              "error_message": "java.lang.AssertionError: expected:\u003c5\u003e but was:\u003c4\u003e\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat org.junit.Assert.failNotEquals(Assert.java:743)\r\n\tat org.junit.Assert.assertEquals(Assert.java:118)\r\n\tat org.junit.Assert.assertEquals(Assert.java:555)\r\n\tat org.junit.Assert.assertEquals(Assert.java:542)\r\n\tat FancyStepDefinition$$anonfun$3.apply$mcVI$sp(FancyStepDefinition.scala:19)\r\n\tat FancyStepDefinition$$anonfun$3.apply(FancyStepDefinition.scala:18)\r\n\tat FancyStepDefinition$$anonfun$3.apply(FancyStepDefinition.scala:18)\r\n\tat cucumber.api.scala.ScalaDsl$StepBody$$anonfun$apply$2.applyOrElse(ScalaDsl.scala:97)\r\n\tat cucumber.api.scala.ScalaDsl$StepBody$$anonfun$apply$2.applyOrElse(ScalaDsl.scala:95)\r\n\tat scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:36)\r\n\tat cucumber.runtime.scala.ScalaStepDefinition.execute(ScalaStepDefinition.scala:71)\r\n\tat cucumber.runtime.StepDefinitionMatch.runStep(StepDefinitionMatch.java:37)\r\n\tat cucumber.runtime.Runtime.runStep(Runtime.java:298)\r\n\tat cucumber.runtime.model.StepContainer.runStep(StepContainer.java:44)\r\n\tat cucumber.runtime.model.StepContainer.runSteps(StepContainer.java:39)\r\n\tat cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:48)\r\n\tat cucumber.runtime.junit.ExecutionUnitRunner.run(ExecutionUnitRunner.java:91)\r\n\tat org.junit.runners.Suite.runChild(Suite.java:127)\r\n\tat org.junit.runners.Suite.runChild(Suite.java:26)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:309)\r\n\tat cucumber.runtime.junit.ExamplesRunner.run(ExamplesRunner.java:59)\r\n\tat org.junit.runners.Suite.runChild(Suite.java:127)\r\n\tat org.junit.runners.Suite.runChild(Suite.java:26)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:309)\r\n\tat cucumber.runtime.junit.ScenarioOutlineRunner.run(ScenarioOutlineRunner.java:53)\r\n\tat cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:63)\r\n\tat cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:18)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:309)\r\n\tat cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:70)\r\n\tat cucumber.api.junit.Cucumber.runChild(Cucumber.java:93)\r\n\tat cucumber.api.junit.Cucumber.runChild(Cucumber.java:37)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:309)\r\n\tat cucumber.api.junit.Cucumber.run(Cucumber.java:98)\r\n\tat org.junit.runner.JUnitCore.run(JUnitCore.java:160)\r\n\tat com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:74)\r\n\tat com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:211)\r\n\tat com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:67)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)\r\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\r\n\tat java.lang.reflect.Method.invoke(Method.java:606)\r\n\tat com.intellij.rt.execution.application.AppMain.main(AppMain.java:134)\r\n\tat ✽.Then the result should equal to 5(single/scenario_outline.feature:9)\r\n"
+            },
+            "name": "the result should equal to 5",
+            "keyword": "Then ",
+            "line": 9,
+            "match": {
+              "arguments": [
+                {
+                  "val": "5",
+                  "offset": 27
+                }
+              ],
+              "location": "FancyStepDefinition.scala:18"
+            },
+            "matchedColumns": [
+              2
+            ]
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "id": "simple-scenario-outline;a-+-b;;4",
+        "description": "",
+        "name": "A + B",
+        "keyword": "Scenario Outline",
+        "line": 15,
+        "steps": [
+          {
+            "result": {
+              "duration": 200338,
+              "status": "passed"
+            },
+            "name": "3 and 3 as input",
+            "keyword": "Given ",
+            "line": 7,
+            "match": {
+              "arguments": [
+                {
+                  "val": "3",
+                  "offset": 0
+                },
+                {
+                  "val": "3",
+                  "offset": 6
+                }
+              ],
+              "location": "FancyStepDefinition.scala:10"
+            },
+            "matchedColumns": [
+              0,
+              1
+            ]
+          },
+          {
+            "result": {
+              "duration": 49675,
+              "status": "passed"
+            },
+            "name": "action",
+            "keyword": "When ",
+            "line": 8,
+            "match": {
+              "location": "FancyStepDefinition.scala:15"
+            }
+          },
+          {
+            "result": {
+              "duration": 345666,
+              "status": "failed",
+              "error_message": "java.lang.AssertionError: expected:\u003c9\u003e but was:\u003c6\u003e\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat org.junit.Assert.failNotEquals(Assert.java:743)\r\n\tat org.junit.Assert.assertEquals(Assert.java:118)\r\n\tat org.junit.Assert.assertEquals(Assert.java:555)\r\n\tat org.junit.Assert.assertEquals(Assert.java:542)\r\n\tat FancyStepDefinition$$anonfun$3.apply$mcVI$sp(FancyStepDefinition.scala:19)\r\n\tat FancyStepDefinition$$anonfun$3.apply(FancyStepDefinition.scala:18)\r\n\tat FancyStepDefinition$$anonfun$3.apply(FancyStepDefinition.scala:18)\r\n\tat cucumber.api.scala.ScalaDsl$StepBody$$anonfun$apply$2.applyOrElse(ScalaDsl.scala:97)\r\n\tat cucumber.api.scala.ScalaDsl$StepBody$$anonfun$apply$2.applyOrElse(ScalaDsl.scala:95)\r\n\tat scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:36)\r\n\tat cucumber.runtime.scala.ScalaStepDefinition.execute(ScalaStepDefinition.scala:71)\r\n\tat cucumber.runtime.StepDefinitionMatch.runStep(StepDefinitionMatch.java:37)\r\n\tat cucumber.runtime.Runtime.runStep(Runtime.java:298)\r\n\tat cucumber.runtime.model.StepContainer.runStep(StepContainer.java:44)\r\n\tat cucumber.runtime.model.StepContainer.runSteps(StepContainer.java:39)\r\n\tat cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:48)\r\n\tat cucumber.runtime.junit.ExecutionUnitRunner.run(ExecutionUnitRunner.java:91)\r\n\tat org.junit.runners.Suite.runChild(Suite.java:127)\r\n\tat org.junit.runners.Suite.runChild(Suite.java:26)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:309)\r\n\tat cucumber.runtime.junit.ExamplesRunner.run(ExamplesRunner.java:59)\r\n\tat org.junit.runners.Suite.runChild(Suite.java:127)\r\n\tat org.junit.runners.Suite.runChild(Suite.java:26)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:309)\r\n\tat cucumber.runtime.junit.ScenarioOutlineRunner.run(ScenarioOutlineRunner.java:53)\r\n\tat cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:63)\r\n\tat cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:18)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:309)\r\n\tat cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:70)\r\n\tat cucumber.api.junit.Cucumber.runChild(Cucumber.java:93)\r\n\tat cucumber.api.junit.Cucumber.runChild(Cucumber.java:37)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:309)\r\n\tat cucumber.api.junit.Cucumber.run(Cucumber.java:98)\r\n\tat org.junit.runner.JUnitCore.run(JUnitCore.java:160)\r\n\tat com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:74)\r\n\tat com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:211)\r\n\tat com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:67)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)\r\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\r\n\tat java.lang.reflect.Method.invoke(Method.java:606)\r\n\tat com.intellij.rt.execution.application.AppMain.main(AppMain.java:134)\r\n\tat ✽.Then the result should equal to 9(single/scenario_outline.feature:9)\r\n"
+            },
+            "name": "the result should equal to 9",
+            "keyword": "Then ",
+            "line": 9,
+            "match": {
+              "arguments": [
+                {
+                  "val": "9",
+                  "offset": 27
+                }
+              ],
+              "location": "FancyStepDefinition.scala:18"
+            },
+            "matchedColumns": [
+              2
+            ]
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "uri": "single/scenario_outline.feature"
+  }
+]

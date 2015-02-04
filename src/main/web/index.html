@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html ng-app="CucumberFancyReport">
+<head>
+    <meta charset="utf-8">
+    <title>Cucumber Features</title>
+    <link rel="shortcut icon" type="image/png" href="images/favicon.ico">
+    <script src="javascripts/angular.js" type="text/javascript"></script>
+    <script src="javascripts/ui-bootstrap-tpls-0.11.2.js" type="text/javascript"></script>
+
+    <link rel="stylesheet" media="screen" href="stylesheets/bootstrap.css">
+    <link rel="stylesheet" media="screen" href="stylesheets/bootstrap-theme.css">
+    <link rel="stylesheet" media="screen" href="stylesheets/main.css">
+
+
+    <script src="javascripts/fancy-report.js" type="text/javascript"></script>
+
+</head>
+<body ng-controller="ReportCtrl" style="padding: 10px !important;">
+<div>
+    <div style="float: left; width: inherit">
+        <table class="table table-bordered table-hover">
+            <tr>
+                <th ng-repeat="column in getColumns()">{{column.display}}</th>
+            </tr>
+            <tr ng-repeat="feature in storage.features">
+                <td ng-repeat="column in getColumns()" class="text-capitalize">
+                    <div ng-show="$index == 0" ng-style="{'margin-left': 10 * feature.level + 'px'}">
+                        <span ng-show="feature.parent">
+                            <b>{{feature[column.name]}}</b>
+                        </span>
+                        <span ng-hide="feature.parent">
+                           <a href="#" ng-click="selectFeature(feature)" ng-class="reflectFeatureStatus(feature)">{{feature[column.name]}}</a>
+                        </span>
+                    </div>
+                    <div ng-show="$index != 0" ng-class="reflectFeatureStatus(feature)">
+                        {{feature[column.name]}}
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div style="float: left; width: 80%" ng-show="isFeatureSelected">
+        <alert close="deselectFeature()" type="dismissable">
+            <p>
+                <b>Feature:</b> {{selectedFeature.name}}
+            </p>
+
+            <p>
+                {{ selectedFeature.description }}
+            </p>
+
+            <div ng-repeat="scenario in selectedFeature.scenarios">
+                <div ng-show="scenario.type=='scenario_outline'">
+                    <b>Scenario Outline:</b> {{scenario.name}}
+                    <ul>
+                        <li ng-repeat="step in scenario.steps" class="list-unstyled">
+                            <b>{{step.keyword}}</b> {{step.name}}
+                        </li>
+                    </ul>
+                    <b>Examples:</b>
+                    <table class="table table-hover">
+                        <tr ng-repeat-start="row in scenario.examples[0].rows track by $index"
+                            ng-click="row.isOpen=!row.isOpen" ng-init="row.isOpen=false" style="cursor: pointer;" ng-class="row.status">
+                            <td>
+                                <div ng-show="$index>0">
+                                    <span ng-hide="row.isOpen">+</span>
+                                    <span ng-show="row.isOpen">-</span>
+                                </div>
+                            </td>
+                            <td ng-repeat="cell in row.cells track by $index">{{cell}}</td>
+                        </tr>
+                        <tr ng-repeat-end ng-show="row.isOpen && $index>0">
+                            <td colspan="999">
+                                <ul>
+                                    <li ng-repeat="step in row.scenario.steps" class="list-unstyled" ng-init="row.status=step.result.status">
+                                        <div ng-include="'scenarioStep'"></div>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div ng-show="scenario.type=='scenario'">
+                    <b>Scenario:</b> {{scenario.name}}
+                    <ul>
+                        <li ng-repeat="step in scenario.steps" class="list-unstyled">
+                            <div ng-include="'scenarioStep'"></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </alert>
+    </div>
+</div>
+
+<script type="text/ng-template" id="scenarioStep">
+    <div ng-class="step.result.status">
+        <b>{{step.keyword}}</b> {{step.name}}
+        <a href="#" ng-if="step.result.status=='failed'" ng-click="step.isCollapsed=!step.isCollapsed">..</a>
+    </div>
+    <div ng-if="step.result.status=='failed'" class="well well-lg" collapse="!step.isCollapsed">
+        <span style="white-space: pre-line;">{{step.result.error_message}} </span>
+    </div>
+</script>
+</body>
+</html>
