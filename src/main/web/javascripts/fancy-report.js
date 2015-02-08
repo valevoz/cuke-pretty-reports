@@ -1,4 +1,14 @@
-var app = angular.module('CucumberFancyReport', ['ui.bootstrap']);
+var app = angular.module('CucumberFancyReport', ['ui.bootstrap', 'ngSanitize']);
+
+app.filter('highlightPlaceholders', function () {
+    return function (item) {
+        return item.replace(/<(.*?)>/igm, function (match) {
+            console.log("x");
+            console.log(match);
+            return "<span class='placeholder'>" + match.replace(/>/g, "&gt;").replace(/</g, "&lt;") + "</span>"
+        });
+    };
+});
 
 app.controller('ReportCtrl', function ($scope, $filter, $http) {
     var config = {
@@ -198,7 +208,7 @@ app.controller('ReportCtrl', function ($scope, $filter, $http) {
             };
 
             for (var key in storage) {
-                if (key != "children" && key != "level") {
+                if (key != "children") {
                     items.push(parentFeature(key, index));
                     toFlatView(storage[key], index + 1)
                 }

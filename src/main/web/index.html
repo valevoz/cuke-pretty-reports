@@ -5,6 +5,7 @@
     <title>Cucumber Features</title>
     <link rel="shortcut icon" type="image/png" href="images/favicon.ico">
     <script src="javascripts/angular.js" type="text/javascript"></script>
+    <script src="javascripts/angular-sanitize.js" type="text/javascript"></script>
     <script src="javascripts/ui-bootstrap-tpls-0.11.2.js" type="text/javascript"></script>
 
     <link rel="stylesheet" media="screen" href="stylesheets/bootstrap.css">
@@ -64,7 +65,7 @@
                     <b>Scenario Outline:</b> {{scenario.name}}
                     <ul>
                         <li ng-repeat="step in scenario.steps" class="list-unstyled">
-                            <b>{{step.keyword}}</b> {{step.name}}
+                            <b>{{step.keyword}}</b> <span ng-bind-html="step.name | highlightPlaceholders"></span>
                         </li>
                     </ul>
                     <b>Examples:</b>

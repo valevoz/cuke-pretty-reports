@@ -30,6 +30,10 @@ a.failed:hover {
     color: #246ac1;
 }
 
+.placeholder {
+    color: #d95fc1;
+}
+
 .pointer {
     cursor: pointer;
 }
