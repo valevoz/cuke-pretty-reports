@@ -221,7 +221,7 @@ app.controller('ReportCtrl', function ($scope, $filter, $http) {
             };
 
             for (var key in storage) {
-                if (key != "children") {
+                if (key != "children" && storage.hasOwnProperty(key)) {
                     items.push(parentFeature(key, index));
                     toFlatView(storage[key], index + 1)
                 }
