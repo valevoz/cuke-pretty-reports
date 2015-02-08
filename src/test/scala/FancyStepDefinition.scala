@@ -1,5 +1,5 @@
-import cucumber.api.DataTable
 import cucumber.api.scala.{EN, ScalaDsl}
+import cucumber.api.{DataTable, Scenario}
 import org.junit.Assert._
 
 class FancyStepDefinition extends ScalaDsl with EN {
@@ -25,4 +25,9 @@ class FancyStepDefinition extends ScalaDsl with EN {
   }
 
   Then("^result$") {}
+
+  After("@screenshot") { scenario: Scenario =>
+    val is = getClass.getResourceAsStream("NYC.jpg")
+    scenario.embed(Stream.continually(is.read).takeWhile(-1 !=).map(_.toByte).toArray, "image/jpeg")
+  }
 }
