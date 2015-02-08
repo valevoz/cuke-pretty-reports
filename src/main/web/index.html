@@ -18,16 +18,16 @@
 </head>
 <body ng-controller="ReportCtrl" style="padding: 10px !important;">
 <div>
-    <div style="float: left; width: 20%">
+    <div style="float: left; width: 25%">
         <table class="table table-bordered table-hover">
             <tr>
                 <th ng-repeat="column in getColumns()">{{column.display}}</th>
             </tr>
             <tr ng-repeat="feature in storage.features">
-                <td ng-repeat="column in getColumns()" class="text-capitalize">
+                <td ng-repeat="column in getColumns()">
                     <div ng-show="$index == 0" ng-style="{'margin-left': 10 * feature.level + 'px'}">
                         <span ng-show="feature.parent">
-                            <b>{{feature[column.name]}}</b>
+                            <b>{{feature[column.name] | capitalize}}</b>
                         </span>
                         <span ng-hide="feature.parent">
                            <a href="#" ng-click="selectFeature(feature)" ng-class="reflectFeatureStatus(feature)">{{feature[column.name]}}</a>
@@ -40,7 +40,7 @@
             </tr>
         </table>
     </div>
-    <div style="float: right; width: 80%" ng-show="isFeatureSelected && !selectedFeature.parent">
+    <div style="float: right; width: 75%" ng-show="isFeatureSelected && !selectedFeature.parent">
         <alert close="deselectFeature()" type="dismissable">
             <ul>
                 <li ng-repeat="tag in selectedFeature.tags" class="list-unstyled tag">
@@ -65,7 +65,7 @@
                     <b>Scenario Outline:</b> {{scenario.name}}
                     <ul>
                         <li ng-repeat="step in scenario.steps" class="list-unstyled">
-                            <b>{{step.keyword}}</b> <span ng-bind-html="step.name | highlightPlaceholders"></span>
+                            <b>{{step.keyword}}</b> <span ng-bind-html="step.name | highlightPlaceholder"></span>
                         </li>
                     </ul>
                     <b>Examples:</b>

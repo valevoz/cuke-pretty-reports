@@ -1,10 +1,21 @@
 var app = angular.module('CucumberFancyReport', ['ui.bootstrap', 'ngSanitize']);
 
-app.filter('highlightPlaceholders', function () {
+app.filter('highlightPlaceholder', function () {
     return function (item) {
         return item.replace(/<(.*?)>/igm, function (match) {
             return "<span class='placeholder'>" + match.replace(/>/g, "&gt;").replace(/</g, "&lt;") + "</span>"
         });
+    };
+});
+app.filter('capitalize', function () {
+    return function (name) {
+        var words = name.match(/[A-Za-z][a-z]*/g);
+
+        return words.map(capitalize).join(" ");
+
+        function capitalize(word) {
+            return word.charAt(0).toUpperCase() + word.substring(1);
+        }
     };
 });
 
