@@ -1,8 +1,8 @@
-.passed1 {
-    color: #41A317;
+.passed {
+    color: #4F8A10;
 }
 
-a.passed1:hover {
+a.passed:hover {
     color: #348017;
 }
 
@@ -24,6 +24,14 @@ a.failed:hover {
 
 .selected {
     font-weight: bold;
+}
+
+.tag {
+    color: #246ac1;
+}
+
+.pointer {
+    cursor: pointer;
 }
 
 a {

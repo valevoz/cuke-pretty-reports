@@ -17,7 +17,7 @@
 </head>
 <body ng-controller="ReportCtrl" style="padding: 10px !important;">
 <div>
-    <div style="float: left; width: inherit">
+    <div style="float: left; width: 20%">
         <table class="table table-bordered table-hover">
             <tr>
                 <th ng-repeat="column in getColumns()">{{column.display}}</th>
@@ -39,8 +39,13 @@
             </tr>
         </table>
     </div>
-    <div style="float: left; width: 80%" ng-show="isFeatureSelected">
+    <div style="float: right; width: 80%" ng-show="isFeatureSelected && !selectedFeature.parent">
         <alert close="deselectFeature()" type="dismissable">
+            <ul>
+                <li ng-repeat="tag in selectedFeature.tags" class="list-unstyled tag">
+                    {{tag.name}}
+                </li>
+            </ul>
             <p>
                 <b>Feature:</b> {{selectedFeature.name}}
             </p>
@@ -50,6 +55,11 @@
             </p>
 
             <div ng-repeat="scenario in selectedFeature.scenarios">
+                <ul>
+                    <li ng-repeat="tag in scenario.tags" class="list-unstyled tag">
+                        {{tag.name}}
+                    </li>
+                </ul>
                 <div ng-show="scenario.type=='scenario_outline'">
                     <b>Scenario Outline:</b> {{scenario.name}}
                     <ul>

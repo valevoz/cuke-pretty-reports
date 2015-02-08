@@ -4,11 +4,12 @@ app.controller('ReportCtrl', function ($scope, $filter, $http) {
     var config = {
         columns: [
             {name: "name", display: "ツ", main: true},
-            {name: "duration", display: "Duration"},
-            {name: "scenarios", display: "Scenarios"},
-            {name: "skipped", display: "Skipped"},
+            {name: "total", display: "Total"},
+            {name: "passed", display: "Passed"},
             {name: "failed", display: "Failed"},
-            {name: "total", display: "Total"}
+            {name: "skipped", display: "Skipped ∞"},
+            {name: "ignored", display: "Ignored ᴓ"},
+            {name: "duration", display: "Duration"}
         ]
     };
 
@@ -27,19 +28,22 @@ app.controller('ReportCtrl', function ($scope, $filter, $http) {
         return $scope.isFeatureSelected ?
             config.columns.filter(function (column) {
                 return column.main;
-            }) :
+            })
+            :
             config.columns;
     };
 
     $scope.reflectFeatureStatus = function (feature) {
-        var clazz = feature.isSelected ? "" : "";
-
+        if (feature.parent) {
+            return "";
+        }
+        var clazz = "passed";
         if (feature.failed) {
-            return clazz + " failed";
+            clazz = "failed";
+        } else if (feature.skipped) {
+            clazz = "skipped";
         }
-        if (feature.skipped) {
-            return clazz + " skipped";
-        }
+        clazz += " pointer";
         return clazz;
     };
 
@@ -63,27 +67,31 @@ app.controller('ReportCtrl', function ($scope, $filter, $http) {
     var ScenarioDetails = function (name, steps) {
         var duration = 0;
         var failed = 0;
+        var passed = 0;
         var skipped = 0;
         var total = steps.length;
 
         steps.forEach(function (step) {
             var result = step.result;
             duration += result.duration || 0;
-            if (result.status == "failed") {
+            if (result.status == "passed") {
+                passed++;
+            } else if (result.status == "failed") {
                 failed++;
-            } else if (result.status == "undefined") {
+            } else if (result.status == "undefined" || result.status == "skipped") {
                 skipped++;
             }
         });
 
-        this.toJson = {name: name, duration: duration, failed: failed, skipped: skipped, total: total}
+        this.toJson = {name: name, duration: duration, passed: passed, failed: failed, skipped: skipped, total: total}
     };
 
     var FeatureDetails = function (feature, scenarios) {
         var duration = 0;
+        var passed = 0;
         var failed = 0;
         var skipped = 0;
-        var total = scenarios.length;
+        var total = 0;
         var parent = "root";
         var id = feature.uri;
 
@@ -101,7 +109,9 @@ app.controller('ReportCtrl', function ($scope, $filter, $http) {
         scenarios.forEach(function (scenario) {
             duration += scenario.duration;
             failed += scenario.failed;
+            passed += scenario.passed;
             skipped += scenario.skipped;
+            total += scenario.total;
         });
 
         var reduceScenarios = function (feature) {
@@ -126,10 +136,12 @@ app.controller('ReportCtrl', function ($scope, $filter, $http) {
 
         this.toJson = {
             name: feature.name,
-            duration: duration / 1000000,
+            duration: parseFloat(duration / 1000000).toFixed(2),
             scenarios: scenarios.length,
+            passed: passed,
             failed: failed,
             skipped: skipped,
+            ignored: 0,
             total: total,
             payload: feature
         }
@@ -137,7 +149,7 @@ app.controller('ReportCtrl', function ($scope, $filter, $http) {
 
     console.log("welcome to my world");
 
-    $http.get('pretty-json.json').success(function (features) {
+    $http.get('/cucumber-reporting/cucumber-fancy-reporting/target/pretty-json.json').success(function (features) {
         var storage = {};
 
         features.map(function (feature) {
