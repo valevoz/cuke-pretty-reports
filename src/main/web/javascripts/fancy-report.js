@@ -23,12 +23,11 @@ app.controller('ReportCtrl', function ($scope, $filter, $http) {
     var config = {
         columns: [
             {name: "name", display: "ツ", main: true},
-            {name: "total", display: "Total"},
-            {name: "passed", display: "Passed"},
-            {name: "failed", display: "Failed"},
-            {name: "skipped", display: "Skipped ∞"},
-            {name: "ignored", display: "Ignored ᴓ"},
-            {name: "duration", display: "Duration"}
+            {name: "total", display: "Total Σ"},
+            {name: "passed", display: "Passed ☼"},
+            {name: "failed", display: "Failed ☁"},
+            {name: "skipped", display: "Skipped ✄"},
+            {name: "duration", display: "Duration ⌛"}
         ]
     };
 
@@ -106,11 +105,11 @@ app.controller('ReportCtrl', function ($scope, $filter, $http) {
     };
 
     var FeatureDetails = function (feature, scenarios) {
-        var duration = 0;
+        var total = 0;
         var passed = 0;
         var failed = 0;
         var skipped = 0;
-        var total = 0;
+        var duration = 0;
         var parent = "root";
         var id = feature.uri;
 
@@ -126,11 +125,11 @@ app.controller('ReportCtrl', function ($scope, $filter, $http) {
         })(feature.uri);
 
         scenarios.forEach(function (scenario) {
-            duration += scenario.duration;
-            failed += scenario.failed;
-            passed += scenario.passed;
-            skipped += scenario.skipped;
             total += scenario.total;
+            passed += scenario.passed;
+            failed += scenario.failed;
+            skipped += scenario.skipped;
+            duration += scenario.duration;
         });
 
         //TODO refactor
@@ -160,11 +159,9 @@ app.controller('ReportCtrl', function ($scope, $filter, $http) {
         this.toJson = {
             name: feature.name,
             duration: parseFloat(duration / 1000000).toFixed(2),
-            scenarios: scenarios.length,
             passed: passed,
             failed: failed,
             skipped: skipped,
-            ignored: 0,
             total: total,
             payload: feature
         }
@@ -174,7 +171,6 @@ app.controller('ReportCtrl', function ($scope, $filter, $http) {
 
     $http.get('/cucumber-reporting/cucumber-fancy-reporting/target/pretty-json.json').success(function (features) {
         var storage = {};
-
         features.map(function (feature) {
             var toHierarchicalView = function (uri, featureDetails) {
                 var levels = uri.split("/"),
@@ -183,12 +179,25 @@ app.controller('ReportCtrl', function ($scope, $filter, $http) {
                 for (var i = 0; i < levels.length - 1; i++) {
                     if (!currentLevel[levels[i]]) {
                         currentLevel[levels[i]] = {};
+                        currentLevel[levels[i]].children = [];
+                        currentLevel[levels[i]].details = {
+                            total: 0,
+                            failed: 0,
+                            passed: 0,
+                            skipped: 0,
+                            duration: 0
+                        };
                     }
                     currentLevel = currentLevel[levels[i]];
+                    currentLevel.details = {
+                        total: currentLevel.details.total + featureDetails.total,
+                        passed: currentLevel.details.passed + featureDetails.passed,
+                        failed: currentLevel.details.failed + featureDetails.failed,
+                        skipped: currentLevel.details.skipped + featureDetails.skipped,
+                        duration: currentLevel.details.duration + parseFloat(featureDetails.duration)
+                    };
                 }
-                if (currentLevel.children === undefined) {
-                    currentLevel.children = [];
-                }
+
                 currentLevel.children.push(featureDetails)
             };
 
@@ -205,24 +214,26 @@ app.controller('ReportCtrl', function ($scope, $filter, $http) {
             toHierarchicalView(feature.uri, featureDetails)
         });
 
+        console.log(storage);
 
         var items = [];
         var toFlatView = function (storage, index) {
-            var parentFeature = function (name, level) {
+            var parentFeature = function (details, name, level) {
                 return {
                     name: name,
                     level: level,
                     parent: true,
-                    duration: "",
-                    failed: "",
-                    skipped: "",
-                    total: ""
-                }
+                    total: details.total,
+                    passed: details.passed,
+                    failed: details.failed,
+                    skipped: details.skipped,
+                    duration: parseFloat(details.duration).toFixed(2)
+                };
             };
 
             for (var key in storage) {
-                if (key != "children" && storage.hasOwnProperty(key)) {
-                    items.push(parentFeature(key, index));
+                if (storage.hasOwnProperty(key) && key != "children" && key != "details") {
+                    items.push(parentFeature(storage[key]["details"], key, index));
                     toFlatView(storage[key], index + 1)
                 }
             }
