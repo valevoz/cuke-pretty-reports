@@ -3,8 +3,6 @@ var app = angular.module('CucumberFancyReport', ['ui.bootstrap', 'ngSanitize']);
 app.filter('highlightPlaceholders', function () {
     return function (item) {
         return item.replace(/<(.*?)>/igm, function (match) {
-            console.log("x");
-            console.log(match);
             return "<span class='placeholder'>" + match.replace(/>/g, "&gt;").replace(/</g, "&lt;") + "</span>"
         });
     };
@@ -124,7 +122,11 @@ app.controller('ReportCtrl', function ($scope, $filter, $http) {
             total += scenario.total;
         });
 
+        //TODO refactor
         var reduceScenarios = function (feature) {
+            if (!(feature.elements && feature.elements.length)) {
+                return [];
+            }
             var elements = feature.elements,
                 scenarios = [];
             for (var i = 0, n = elements.length; i < n; i++) {
@@ -179,14 +181,14 @@ app.controller('ReportCtrl', function ($scope, $filter, $http) {
                 currentLevel.children.push(featureDetails)
             };
 
-            var scenarios = feature.elements.map(function (scenario) {
-                if (scenario.type == "scenario") {
-                    return new ScenarioDetails(scenario.name, scenario.steps).toJson;
-                }
-                return "";
-            }).filter(function (e) {
-                return e != "";
-            });
+            var scenarios = [];
+            if (feature.elements && feature.elements.length) {
+                feature.elements.map(function (scenario) {
+                    if (scenario.type == "scenario") {
+                        scenarios.push(new ScenarioDetails(scenario.name, scenario.steps).toJson);
+                    }
+                });
+            }
 
             var featureDetails = new FeatureDetails(feature, scenarios).toJson;
             toHierarchicalView(feature.uri, featureDetails)

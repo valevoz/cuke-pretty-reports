@@ -8,4 +8,4 @@ Feature: Table Scenario
       | a | b  |
       | 1 | -1 |
     When action
-    Then true
+    Then result

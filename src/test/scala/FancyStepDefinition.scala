@@ -8,6 +8,11 @@ class FancyStepDefinition extends ScalaDsl with EN {
   var b: Int = _
   var result: Int = _
 
+
+  Given("^input") {}
+
+  Given("^table") { table: DataTable =>}
+
   Given("^(.+) and (.+) as input$") { (a: Int, b: Int) =>
     this.a = a
     this.b = b
@@ -15,12 +20,9 @@ class FancyStepDefinition extends ScalaDsl with EN {
 
   When("^action") {}
 
-  Given("^table") { table: DataTable =>
-  }
-
   Then("^the result should equal to (.+)$") { result: Int =>
     assertEquals(result, a + b)
   }
 
-  Then("^true$") {}
+  Then("^result$") {}
 }

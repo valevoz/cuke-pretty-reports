@@ -4,6 +4,6 @@ Feature: Tag
 
   @Scenario
   Scenario: Tag
-    Given x
-    When y
-    Then z
+    Given input
+    When action
+    Then result
