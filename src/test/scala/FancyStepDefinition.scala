@@ -1,3 +1,4 @@
+import cucumber.api.DataTable
 import cucumber.api.scala.{EN, ScalaDsl}
 import org.junit.Assert._
 
@@ -12,10 +13,14 @@ class FancyStepDefinition extends ScalaDsl with EN {
     this.b = b
   }
 
-  When("^action") {
+  When("^action") {}
+
+  Given("^table") { table: DataTable =>
   }
 
   Then("^the result should equal to (.+)$") { result: Int =>
     assertEquals(result, a + b)
   }
+
+  Then("^true$") {}
 }

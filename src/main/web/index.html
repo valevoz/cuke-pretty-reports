@@ -108,6 +108,12 @@
     <div ng-class="step.result.status">
         <b>{{step.keyword}}</b> {{step.name}}
         <a href="#" ng-if="step.result.status=='failed'" ng-click="step.isCollapsed=!step.isCollapsed">..</a>
+
+        <table ng-if="step.rows" class="table table-bordered">
+            <tr ng-repeat="row in step.rows">
+                <td ng-repeat="cell in row.cells">{{cell}}</td>
+            </tr>
+        </table>
     </div>
     <div ng-if="step.result.status=='failed'" class="well well-lg" collapse="!step.isCollapsed">
         <span style="white-space: pre-line;">{{step.result.error_message}} </span>
