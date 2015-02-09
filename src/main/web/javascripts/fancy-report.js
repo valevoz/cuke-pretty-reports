@@ -27,12 +27,15 @@ app.controller('ReportCtrl', function ($scope, $filter, $http) {
             {name: "passed", display: "Passed ☼"},
             {name: "failed", display: "Failed ☁"},
             {name: "skipped", display: "Skipped ✄"},
-            {name: "duration", display: "Duration ⌛"}
+            {name: "duration", display: "Duration ⌚"}
         ]
     };
 
 
     $scope.selectFeature = function (feature) {
+        if (feature.parent) {
+            return;
+        }
         feature.isSelected = true;
         $scope.selectedFeature = feature.payload;
         $scope.isFeatureSelected = true;

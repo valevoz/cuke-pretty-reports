@@ -23,18 +23,23 @@
             <tr>
                 <th ng-repeat="column in getColumns()">{{column.display}}</th>
             </tr>
-            <tr ng-repeat="feature in storage.features">
+            <tr ng-repeat="feature in storage.features" ng-click="selectFeature(feature)" ng-class="reflectFeatureStatus(feature)">
                 <td ng-repeat="column in getColumns()">
                     <div ng-if="$index == 0" ng-style="{'margin-left': 10 * feature.level + 'px'}">
                         <span ng-if="feature.parent">
                             <b>{{feature[column.name] | capitalize}}</b>
                         </span>
                         <span ng-if="!feature.parent">
-                           <a href="#" ng-click="selectFeature(feature)" ng-class="reflectFeatureStatus(feature)">{{feature[column.name]}}</a>
+                           {{feature[column.name]}}
                         </span>
                     </div>
-                    <div ng-if="$index != 0" ng-class="reflectFeatureStatus(feature)">
-                        {{feature[column.name]}}
+                    <div ng-if="$index != 0">
+                        <span ng-if="feature.parent">
+                            <b>{{feature[column.name]}}</b>
+                        </span>
+                        <span ng-if="!feature.parent">
+                           {{feature[column.name]}}
+                        </span>
                     </div>
                 </td>
             </tr>
