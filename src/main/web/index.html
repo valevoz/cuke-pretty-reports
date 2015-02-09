@@ -18,7 +18,7 @@
 </head>
 <body ng-controller="ReportCtrl" style="padding: 10px !important;">
 <div>
-    <div style="float: left; width: 25%">
+    <div style="float: left;width: 15%">
         <table class="table table-bordered table-hover">
             <tr>
                 <th ng-repeat="column in getColumns()">{{column.display}}</th>
@@ -45,7 +45,7 @@
             </tr>
         </table>
     </div>
-    <div style="float: right; width: 75%" ng-show="isFeatureSelected && !selectedFeature.parent">
+    <div style="float: right;width: 85%" ng-show="isFeatureSelected && !selectedFeature.parent">
         <alert close="deselectFeature()" type="dismissable">
             <ul>
                 <li ng-repeat="tag in selectedFeature.tags" class="list-unstyled tag">
