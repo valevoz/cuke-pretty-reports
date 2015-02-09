@@ -26,7 +26,7 @@ app.controller('ReportCtrl', function ($scope, $filter, $http) {
             {name: "total", display: "Total Σ"},
             {name: "passed", display: "Passed ☼"},
             {name: "failed", display: "Failed ☁"},
-            {name: "skipped", display: "Skipped ✄"},
+            {name: "skipped", display: "Skipped ❄"},
             {name: "duration", display: "Duration ⌚"}
         ]
     };
