@@ -21,7 +21,7 @@ app.filter('highlightStepPlaceholder', function () {
         return highlightedStep;
     };
 });
-app.filter('capitalize', function () {
+app.filter('capitalize', function () {1
     return function (name) {
         var words = name.match(/[A-Za-z][a-z]*/g);
 
@@ -197,7 +197,7 @@ app.controller('ReportCtrl', function ($scope, $filter, $http) {
 
     console.log("welcome to my world");
 
-    $http.get('/cucumber-reporting/cucumber-fancy-reporting/target/pretty-json.json').success(function (features) {
+    $http.get('pretty-json.json').success(function (features) {
         var storage = {};
         features.map(function (feature) {
             var toHierarchicalView = function (uri, featureDetails) {
