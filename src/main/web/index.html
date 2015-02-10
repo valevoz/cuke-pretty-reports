@@ -76,12 +76,10 @@
                     <b>Examples:</b>
                     <table class="table table-hover">
                         <tr ng-repeat-start="row in scenario.examples[0].rows track by $index"
-                            ng-click="row.isOpen=!row.isOpen" ng-init="row.isOpen=false" style="cursor: pointer;" ng-class="row.status">
+                            ng-click="toggleStep(scenario.examples[0].rows, $index)" ng-init="row.isOpen=false" style="cursor: pointer;" ng-class="row.status">
                             <td>
-                                <div ng-show="$index>0">
-                                    <span ng-hide="row.isOpen">+</span>
-                                    <span ng-show="row.isOpen">-</span>
-                                </div>
+                                <span ng-hide="row.isOpen">+</span>
+                                <span ng-show="row.isOpen">-</span>
                             </td>
                             <td ng-repeat="cell in row.cells track by $index">{{cell}}</td>
                         </tr>

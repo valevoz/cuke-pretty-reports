@@ -82,6 +82,17 @@ app.controller('ReportCtrl', function ($scope, $filter, $http) {
         return clazz;
     };
 
+    $scope.toggleStep = function (rows, index) {
+        var isOpen = rows[index].isOpen;
+        if (index == 0) {
+            rows.forEach(function (row) {
+                row.isOpen = !isOpen;
+            });
+        } else {
+            rows[index].isOpen = !isOpen;
+        }
+    };
+
     $scope.storage = {
         features: []
     };
