@@ -7,6 +7,20 @@ app.filter('highlightPlaceholder', function () {
         });
     };
 });
+
+app.filter('highlightStepPlaceholder', function () {
+    return function (step) {
+        var highlightedStep = step.name;
+        if (step.match && step.match.arguments) {
+            for (var i = step.match.arguments.length - 1; i >= 0; i--) {
+                var arg = step.match.arguments[i],
+                    val = "<span class='placeholder'>" + arg.val + "</span>";
+                highlightedStep = highlightedStep.substring(0, arg.offset) + val + highlightedStep.substring(arg.offset + arg.val.length);
+            }
+        }
+        return highlightedStep;
+    };
+});
 app.filter('capitalize', function () {
     return function (name) {
         var words = name.match(/[A-Za-z][a-z]*/g);
@@ -253,7 +267,10 @@ app.controller('ReportCtrl', function ($scope, $filter, $http) {
 
         $scope.storage.features = items;
     }).error(function (error, status) {
-        alert(error + "\n" + status);
+        alert("Source JSON file not found.");
+        console.log(error);
+        console.log(status);
+        $scope.storage.features = [];
     });
 
 })

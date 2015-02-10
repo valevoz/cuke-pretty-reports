@@ -61,11 +61,16 @@
                 <div ng-repeat="tag in scenario.tags" class="tag">
                     {{tag.name}}
                 </div>
-                <div ng-show="scenario.type=='scenario_outline'">
+                <div ng-if="scenario.type=='scenario_outline'">
                     <b>Scenario Outline:</b> {{scenario.name}}
                     <ul>
                         <li ng-repeat="step in scenario.steps" class="list-unstyled">
                             <b>{{step.keyword}}</b> <span ng-bind-html="step.name | highlightPlaceholder"></span>
+                            <table ng-if="step.rows" class="table table-bordered">
+                                <tr ng-repeat="row in step.rows">
+                                    <td ng-repeat="cell in row.cells">{{cell}}</td>
+                                </tr>
+                            </table>
                         </li>
                     </ul>
                     <b>Examples:</b>
@@ -91,7 +96,7 @@
                         </tr>
                     </table>
                 </div>
-                <div ng-show="scenario.type=='scenario'">
+                <div ng-if="scenario.type=='scenario'">
                     <b>Scenario:</b> {{scenario.name}}
                     <ul>
                         <li ng-repeat="step in scenario.steps" class="list-unstyled">
@@ -106,8 +111,8 @@
 
 <script type="text/ng-template" id="scenarioStep">
     <div ng-class="step.result.status">
-        <b>{{step.keyword}}</b> {{step.name}}
-        <a href="#" ng-if="step.result.status=='failed'" ng-click="step.isCollapsed=!step.isCollapsed">...</a>
+        <b>{{step.keyword}}</b> <span ng-bind-html="step | highlightStepPlaceholder"></span>
+        <a href="#" ng-show="step.result.status=='failed'" ng-click="step.isCollapsed=!step.isCollapsed">...</a>
 
         <table ng-if="step.rows" class="table table-bordered">
             <tr ng-repeat="row in step.rows">
