@@ -17,8 +17,8 @@
 
 </head>
 <body ng-controller="ReportCtrl" style="padding: 20px !important;">
-<div>
-    <div style="float: left;width: 15%">
+<div style="display:table;">
+    <div style="display: table-cell">
         <table class="table table-bordered table-hover">
             <tr>
                 <th ng-repeat="column in getColumns()">{{column.display}}</th>
@@ -45,7 +45,7 @@
             </tr>
         </table>
     </div>
-    <div style="float: right;width: 85%" ng-show="isFeatureSelected && !selectedFeature.parent">
+    <div style="display: table-cell;width: 80%" ng-if="isFeatureSelected && !selectedFeature.parent">
         <alert close="deselectFeature()" type="dismissable">
             <div ng-repeat="tag in selectedFeature.tags" class="tag">
                 {{tag.name}}
@@ -118,7 +118,7 @@
             </tr>
         </table>
         <div ng-repeat="embedding in step.embeddings">
-            <img ng-src="data:{{embedding.mime_type}};base64,{{embedding.data}}"/>
+            <img style="width: 80%" ng-src="data:{{embedding.mime_type}};base64,{{embedding.data}}"/>
         </div>
     </div>
     <div ng-if="step.result.status=='failed'" class="well well-lg" collapse="!step.isCollapsed">

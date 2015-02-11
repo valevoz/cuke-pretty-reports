@@ -1,4 +1,4 @@
-Feature: Simple Scenario Outline
+Feature: Long Long Long Long Long Long Long Long Long Long Long Long Long Simple Scenario Outline
   As a User
   I want to action
   So that benefit
