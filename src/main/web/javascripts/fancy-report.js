@@ -21,7 +21,8 @@ app.filter('highlightStepPlaceholder', function () {
         return highlightedStep;
     };
 });
-app.filter('capitalize', function () {1
+app.filter('capitalize', function () {
+    1
     return function (name) {
         var words = name.match(/[A-Za-z][a-z]*/g);
 
@@ -199,6 +200,7 @@ app.controller('ReportCtrl', function ($scope, $filter, $http) {
 
     $http.get('pretty-json.json').success(function (features) {
         var storage = {};
+        storage.children = [];
         features.map(function (feature) {
             var toHierarchicalView = function (uri, featureDetails) {
                 var levels = uri.split("/"),
