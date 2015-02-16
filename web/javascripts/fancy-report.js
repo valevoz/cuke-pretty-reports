@@ -196,8 +196,6 @@ app.controller('ReportCtrl', function ($scope, $filter, $http) {
         }
     };
 
-    console.log("welcome to my world");
-
     $http.get('pretty-json.json').success(function (features) {
         var storage = {};
         storage.children = [];
@@ -244,8 +242,6 @@ app.controller('ReportCtrl', function ($scope, $filter, $http) {
             toHierarchicalView(feature.uri, featureDetails)
         });
 
-        console.log(storage);
-
         var items = [];
         var toFlatView = function (storage, index) {
             var parentFeature = function (details, name, level) {
@@ -276,7 +272,6 @@ app.controller('ReportCtrl', function ($scope, $filter, $http) {
         };
 
         toFlatView(storage, 0);
-        console.log(items);
 
         $scope.storage.features = items;
     }).error(function (error, status) {
