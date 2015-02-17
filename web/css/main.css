@@ -2,16 +2,8 @@
     color: #4F8A10;
 }
 
-a.passed:hover {
-    color: #348017;
-}
-
 .failed {
     color: #FF2400;
-}
-
-a.failed:hover {
-    color: #E41B17;
 }
 
 .skipped {
@@ -36,8 +28,4 @@ a.failed:hover {
 
 .pointer {
     cursor: pointer;
-}
-
-a {
-    color: inherit;
 }
