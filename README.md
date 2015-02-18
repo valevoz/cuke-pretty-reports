@@ -1,4 +1,4 @@
-cucumber-fancy-reporting
+cuke-pretty-reports
 ==========
 
 α-version.
