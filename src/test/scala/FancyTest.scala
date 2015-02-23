@@ -6,7 +6,7 @@ import org.junit.runner.RunWith
 @CucumberOptions(tags = Array("~@ignore"),
   plugin = Array(
     "html:target/html",
-    "json:target/json.json",
-    "gherkin.formatter.JSONPrettyFormatter:web/pretty-json.json"
+    "gherkin.formatter.JSONPrettyFormatter:src/main/web/pretty-json.json",
+    "org.v5k.HtmlPrettyFormatter:target/cuke-pretty-reports"
   ))
 class FancyTest
