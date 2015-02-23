@@ -43,12 +43,12 @@ module.exports = function (grunt) {
                         expand: 'true',
                         cwd: 'web/js/vendor/',
                         src: '*',
-                        dest: 'build/cuke-pretty-reports/js/vendor/'
+                        dest: 'build/<%= pkg.name %>/js/vendor/'
                     }, {
                         expand: 'true',
                         cwd: 'web/css/vendor/',
                         src: '*',
-                        dest: 'build/cuke-pretty-reports/css/vendor/'
+                        dest: 'build/<%= pkg.name %>/css/vendor/'
                     }
                 ]
             },
@@ -56,13 +56,13 @@ module.exports = function (grunt) {
                 expand: 'true',
                 cwd: 'web/',
                 src: '*',
-                dest: 'build/cuke-pretty-reports/'
+                dest: 'build/<%= pkg.name %>/'
             },
             images: {
                 expand: 'true',
                 cwd: 'web/images',
                 src: '*',
-                dest: 'build/cuke-pretty-reports/images'
+                dest: 'build/<%= pkg.name %>/images'
             }
         },
         chmod: {
