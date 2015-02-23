@@ -161,7 +161,7 @@ app.controller('ReportCtrl', function ($scope, $filter, $http) {
         }
     };
 
-    $http.get('pretty-json.json').success(function (features) {
+    $http.get('data.json').success(function (features) {
         var storage = {};
         storage.children = [];
         features.map(function (feature) {

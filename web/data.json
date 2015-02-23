@@ -75,7 +75,7 @@
         "steps": [
           {
             "result": {
-              "duration": 137321142,
+              "duration": 143839952,
               "status": "passed"
             },
             "line": 7,
@@ -101,7 +101,7 @@
           },
           {
             "result": {
-              "duration": 99758,
+              "duration": 208549,
               "status": "passed"
             },
             "line": 8,
@@ -113,7 +113,7 @@
           },
           {
             "result": {
-              "duration": 2738647,
+              "duration": 5277777,
               "status": "passed"
             },
             "line": 9,
@@ -144,7 +144,7 @@
         "steps": [
           {
             "result": {
-              "duration": 213476,
+              "duration": 189254,
               "status": "passed"
             },
             "line": 7,
@@ -170,7 +170,7 @@
           },
           {
             "result": {
-              "duration": 46390,
+              "duration": 38590,
               "status": "passed"
             },
             "line": 8,
@@ -182,7 +182,7 @@
           },
           {
             "result": {
-              "duration": 853903,
+              "duration": 1237339,
               "error_message": "java.lang.AssertionError: expected:\u003c5\u003e but was:\u003c4\u003e\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat org.junit.Assert.failNotEquals(Assert.java:743)\r\n\tat org.junit.Assert.assertEquals(Assert.java:118)\r\n\tat org.junit.Assert.assertEquals(Assert.java:555)\r\n\tat org.junit.Assert.assertEquals(Assert.java:542)\r\n\tat FancyStepDefinition$$anonfun$4.apply$mcVI$sp(FancyStepDefinition.scala:24)\r\n\tat FancyStepDefinition$$anonfun$4.apply(FancyStepDefinition.scala:23)\r\n\tat FancyStepDefinition$$anonfun$4.apply(FancyStepDefinition.scala:23)\r\n\tat cucumber.api.scala.ScalaDsl$StepBody$$anonfun$apply$2.applyOrElse(ScalaDsl.scala:97)\r\n\tat cucumber.api.scala.ScalaDsl$StepBody$$anonfun$apply$2.applyOrElse(ScalaDsl.scala:95)\r\n\tat scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:36)\r\n\tat cucumber.runtime.scala.ScalaStepDefinition.execute(ScalaStepDefinition.scala:71)\r\n\tat cucumber.runtime.StepDefinitionMatch.runStep(StepDefinitionMatch.java:37)\r\n\tat cucumber.runtime.Runtime.runStep(Runtime.java:298)\r\n\tat cucumber.runtime.model.StepContainer.runStep(StepContainer.java:44)\r\n\tat cucumber.runtime.model.StepContainer.runSteps(StepContainer.java:39)\r\n\tat cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:48)\r\n\tat cucumber.runtime.junit.ExecutionUnitRunner.run(ExecutionUnitRunner.java:91)\r\n\tat org.junit.runners.Suite.runChild(Suite.java:127)\r\n\tat org.junit.runners.Suite.runChild(Suite.java:26)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:309)\r\n\tat cucumber.runtime.junit.ExamplesRunner.run(ExamplesRunner.java:59)\r\n\tat org.junit.runners.Suite.runChild(Suite.java:127)\r\n\tat org.junit.runners.Suite.runChild(Suite.java:26)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:309)\r\n\tat cucumber.runtime.junit.ScenarioOutlineRunner.run(ScenarioOutlineRunner.java:53)\r\n\tat cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:63)\r\n\tat cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:18)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:309)\r\n\tat cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:70)\r\n\tat cucumber.api.junit.Cucumber.runChild(Cucumber.java:93)\r\n\tat cucumber.api.junit.Cucumber.runChild(Cucumber.java:37)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:309)\r\n\tat cucumber.api.junit.Cucumber.run(Cucumber.java:98)\r\n\tat org.junit.runner.JUnitCore.run(JUnitCore.java:160)\r\n\tat com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:74)\r\n\tat com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:211)\r\n\tat com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:67)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\r\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\r\n\tat java.lang.reflect.Method.invoke(Method.java:483)\r\n\tat com.intellij.rt.execution.application.AppMain.main(AppMain.java:134)\r\n\tat ✽.Then the result should equal to 5(edge_cases/error_in_example.feature:9)\r\n",
               "status": "failed"
             },
@@ -224,7 +224,7 @@
         "steps": [
           {
             "result": {
-              "duration": 232360,
+              "duration": 2993587,
               "status": "passed"
             },
             "line": 7,
@@ -246,7 +246,7 @@
           },
           {
             "result": {
-              "duration": 45979,
+              "duration": 75948,
               "status": "passed"
             },
             "line": 8,
@@ -258,7 +258,7 @@
           },
           {
             "result": {
-              "duration": 321445,
+              "duration": 358803,
               "error_message": "java.lang.AssertionError: expected:\u003c5\u003e but was:\u003c4\u003e\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat org.junit.Assert.failNotEquals(Assert.java:743)\r\n\tat org.junit.Assert.assertEquals(Assert.java:118)\r\n\tat org.junit.Assert.assertEquals(Assert.java:555)\r\n\tat org.junit.Assert.assertEquals(Assert.java:542)\r\n\tat FancyStepDefinition$$anonfun$4.apply$mcVI$sp(FancyStepDefinition.scala:24)\r\n\tat FancyStepDefinition$$anonfun$4.apply(FancyStepDefinition.scala:23)\r\n\tat FancyStepDefinition$$anonfun$4.apply(FancyStepDefinition.scala:23)\r\n\tat cucumber.api.scala.ScalaDsl$StepBody$$anonfun$apply$2.applyOrElse(ScalaDsl.scala:97)\r\n\tat cucumber.api.scala.ScalaDsl$StepBody$$anonfun$apply$2.applyOrElse(ScalaDsl.scala:95)\r\n\tat scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:36)\r\n\tat cucumber.runtime.scala.ScalaStepDefinition.execute(ScalaStepDefinition.scala:71)\r\n\tat cucumber.runtime.StepDefinitionMatch.runStep(StepDefinitionMatch.java:37)\r\n\tat cucumber.runtime.Runtime.runStep(Runtime.java:298)\r\n\tat cucumber.runtime.model.StepContainer.runStep(StepContainer.java:44)\r\n\tat cucumber.runtime.model.StepContainer.runSteps(StepContainer.java:39)\r\n\tat cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:48)\r\n\tat cucumber.runtime.junit.ExecutionUnitRunner.run(ExecutionUnitRunner.java:91)\r\n\tat cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:63)\r\n\tat cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:18)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:309)\r\n\tat cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:70)\r\n\tat cucumber.api.junit.Cucumber.runChild(Cucumber.java:93)\r\n\tat cucumber.api.junit.Cucumber.runChild(Cucumber.java:37)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:309)\r\n\tat cucumber.api.junit.Cucumber.run(Cucumber.java:98)\r\n\tat org.junit.runner.JUnitCore.run(JUnitCore.java:160)\r\n\tat com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:74)\r\n\tat com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:211)\r\n\tat com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:67)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\r\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\r\n\tat java.lang.reflect.Method.invoke(Method.java:483)\r\n\tat com.intellij.rt.execution.application.AppMain.main(AppMain.java:134)\r\n\tat ✽.Then the result should equal to 5(edge_cases/error_in_scenario.feature:9)\r\n",
               "status": "failed"
             },
@@ -360,7 +360,7 @@
         "steps": [
           {
             "result": {
-              "duration": 223739,
+              "duration": 194591,
               "status": "passed"
             },
             "line": 7,
@@ -425,7 +425,7 @@
         "steps": [
           {
             "result": {
-              "duration": 233591,
+              "duration": 231950,
               "status": "passed"
             },
             "line": 7,
@@ -508,7 +508,7 @@
         "steps": [
           {
             "result": {
-              "duration": 297635,
+              "duration": 204855,
               "status": "passed"
             },
             "line": 7,
@@ -530,7 +530,7 @@
           },
           {
             "result": {
-              "duration": 54600,
+              "duration": 55011,
               "status": "passed"
             },
             "line": 8,
@@ -542,7 +542,7 @@
           },
           {
             "result": {
-              "duration": 492636,
+              "duration": 358393,
               "error_message": "java.lang.AssertionError: expected:\u003c5\u003e but was:\u003c4\u003e\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat org.junit.Assert.failNotEquals(Assert.java:743)\r\n\tat org.junit.Assert.assertEquals(Assert.java:118)\r\n\tat org.junit.Assert.assertEquals(Assert.java:555)\r\n\tat org.junit.Assert.assertEquals(Assert.java:542)\r\n\tat FancyStepDefinition$$anonfun$4.apply$mcVI$sp(FancyStepDefinition.scala:24)\r\n\tat FancyStepDefinition$$anonfun$4.apply(FancyStepDefinition.scala:23)\r\n\tat FancyStepDefinition$$anonfun$4.apply(FancyStepDefinition.scala:23)\r\n\tat cucumber.api.scala.ScalaDsl$StepBody$$anonfun$apply$2.applyOrElse(ScalaDsl.scala:97)\r\n\tat cucumber.api.scala.ScalaDsl$StepBody$$anonfun$apply$2.applyOrElse(ScalaDsl.scala:95)\r\n\tat scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:36)\r\n\tat cucumber.runtime.scala.ScalaStepDefinition.execute(ScalaStepDefinition.scala:71)\r\n\tat cucumber.runtime.StepDefinitionMatch.runStep(StepDefinitionMatch.java:37)\r\n\tat cucumber.runtime.Runtime.runStep(Runtime.java:298)\r\n\tat cucumber.runtime.model.StepContainer.runStep(StepContainer.java:44)\r\n\tat cucumber.runtime.model.StepContainer.runSteps(StepContainer.java:39)\r\n\tat cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:48)\r\n\tat cucumber.runtime.junit.ExecutionUnitRunner.run(ExecutionUnitRunner.java:91)\r\n\tat cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:63)\r\n\tat cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:18)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:309)\r\n\tat cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:70)\r\n\tat cucumber.api.junit.Cucumber.runChild(Cucumber.java:93)\r\n\tat cucumber.api.junit.Cucumber.runChild(Cucumber.java:37)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:309)\r\n\tat cucumber.api.junit.Cucumber.run(Cucumber.java:98)\r\n\tat org.junit.runner.JUnitCore.run(JUnitCore.java:160)\r\n\tat com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:74)\r\n\tat com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:211)\r\n\tat com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:67)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\r\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\r\n\tat java.lang.reflect.Method.invoke(Method.java:483)\r\n\tat com.intellij.rt.execution.application.AppMain.main(AppMain.java:134)\r\n\tat ✽.Then the result should equal to 5(multi/scenario_mix.feature:9)\r\n",
               "status": "failed"
             },
@@ -634,7 +634,7 @@
         "steps": [
           {
             "result": {
-              "duration": 286139,
+              "duration": 3652488,
               "status": "passed"
             },
             "line": 13,
@@ -660,7 +660,7 @@
           },
           {
             "result": {
-              "duration": 42285,
+              "duration": 29558,
               "status": "passed"
             },
             "line": 14,
@@ -672,7 +672,7 @@
           },
           {
             "result": {
-              "duration": 267665,
+              "duration": 89907,
               "status": "passed"
             },
             "line": 15,
@@ -703,7 +703,7 @@
         "steps": [
           {
             "result": {
-              "duration": 225791,
+              "duration": 192128,
               "status": "passed"
             },
             "line": 13,
@@ -729,7 +729,7 @@
           },
           {
             "result": {
-              "duration": 56243,
+              "duration": 237697,
               "status": "passed"
             },
             "line": 14,
@@ -741,7 +741,7 @@
           },
           {
             "result": {
-              "duration": 149023,
+              "duration": 136707,
               "status": "passed"
             },
             "line": 15,
@@ -845,7 +845,7 @@
         "steps": [
           {
             "result": {
-              "duration": 227434,
+              "duration": 213886,
               "status": "passed"
             },
             "line": 7,
@@ -871,7 +871,7 @@
           },
           {
             "result": {
-              "duration": 42695,
+              "duration": 70612,
               "status": "passed"
             },
             "line": 8,
@@ -883,7 +883,7 @@
           },
           {
             "result": {
-              "duration": 178170,
+              "duration": 2949660,
               "status": "passed"
             },
             "line": 9,
@@ -914,7 +914,7 @@
         "steps": [
           {
             "result": {
-              "duration": 400267,
+              "duration": 1745164,
               "status": "passed"
             },
             "line": 7,
@@ -940,7 +940,7 @@
           },
           {
             "result": {
-              "duration": 52137,
+              "duration": 32021,
               "status": "passed"
             },
             "line": 8,
@@ -952,7 +952,7 @@
           },
           {
             "result": {
-              "duration": 150665,
+              "duration": 123569,
               "status": "passed"
             },
             "line": 9,
@@ -1046,7 +1046,7 @@
         "steps": [
           {
             "result": {
-              "duration": 269308,
+              "duration": 212655,
               "status": "passed"
             },
             "line": 18,
@@ -1072,7 +1072,7 @@
           },
           {
             "result": {
-              "duration": 57885,
+              "duration": 55832,
               "status": "passed"
             },
             "line": 19,
@@ -1084,7 +1084,7 @@
           },
           {
             "result": {
-              "duration": 167907,
+              "duration": 143275,
               "status": "passed"
             },
             "line": 20,
@@ -1115,7 +1115,7 @@
         "steps": [
           {
             "result": {
-              "duration": 199928,
+              "duration": 181865,
               "status": "passed"
             },
             "line": 18,
@@ -1141,7 +1141,7 @@
           },
           {
             "result": {
-              "duration": 52548,
+              "duration": 56243,
               "status": "passed"
             },
             "line": 19,
@@ -1153,7 +1153,7 @@
           },
           {
             "result": {
-              "duration": 156002,
+              "duration": 124391,
               "status": "passed"
             },
             "line": 20,
@@ -1239,7 +1239,7 @@
         "after": [
           {
             "result": {
-              "duration": 232854819,
+              "duration": 393887779,
               "status": "passed"
             },
             "match": {
@@ -1252,7 +1252,7 @@
         "steps": [
           {
             "result": {
-              "duration": 87033,
+              "duration": 75948,
               "status": "passed"
             },
             "line": 6,
@@ -1264,7 +1264,7 @@
           },
           {
             "result": {
-              "duration": 50085,
+              "duration": 27505,
               "status": "passed"
             },
             "line": 7,
@@ -1276,7 +1276,7 @@
           },
           {
             "result": {
-              "duration": 78001,
+              "duration": 229076,
               "status": "passed"
             },
             "embeddings": [
@@ -1320,7 +1320,7 @@
         "steps": [
           {
             "result": {
-              "duration": 50084,
+              "duration": 45980,
               "status": "passed"
             },
             "line": 7,
@@ -1332,7 +1332,7 @@
           },
           {
             "result": {
-              "duration": 40232,
+              "duration": 29968,
               "status": "passed"
             },
             "line": 8,
@@ -1344,7 +1344,7 @@
           },
           {
             "result": {
-              "duration": 38179,
+              "duration": 21759,
               "status": "passed"
             },
             "line": 9,
@@ -1388,7 +1388,7 @@
         "steps": [
           {
             "result": {
-              "duration": 204444,
+              "duration": 192538,
               "status": "passed"
             },
             "line": 7,
@@ -1410,7 +1410,7 @@
           },
           {
             "result": {
-              "duration": 78001,
+              "duration": 29968,
               "status": "passed"
             },
             "line": 8,
@@ -1422,7 +1422,7 @@
           },
           {
             "result": {
-              "duration": 135886,
+              "duration": 89085,
               "status": "passed"
             },
             "line": 9,
@@ -1532,7 +1532,7 @@
         "steps": [
           {
             "result": {
-              "duration": 224149,
+              "duration": 176528,
               "status": "passed"
             },
             "line": 7,
@@ -1558,7 +1558,7 @@
           },
           {
             "result": {
-              "duration": 44338,
+              "duration": 25863,
               "status": "passed"
             },
             "line": 8,
@@ -1570,7 +1570,7 @@
           },
           {
             "result": {
-              "duration": 169139,
+              "duration": 100990,
               "status": "passed"
             },
             "line": 9,
@@ -1601,7 +1601,7 @@
         "steps": [
           {
             "result": {
-              "duration": 247139,
+              "duration": 128496,
               "status": "passed"
             },
             "line": 7,
@@ -1627,7 +1627,7 @@
           },
           {
             "result": {
-              "duration": 44337,
+              "duration": 25863,
               "status": "passed"
             },
             "line": 8,
@@ -1639,7 +1639,7 @@
           },
           {
             "result": {
-              "duration": 413814,
+              "duration": 330887,
               "error_message": "java.lang.AssertionError: expected:\u003c5\u003e but was:\u003c4\u003e\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat org.junit.Assert.failNotEquals(Assert.java:743)\r\n\tat org.junit.Assert.assertEquals(Assert.java:118)\r\n\tat org.junit.Assert.assertEquals(Assert.java:555)\r\n\tat org.junit.Assert.assertEquals(Assert.java:542)\r\n\tat FancyStepDefinition$$anonfun$4.apply$mcVI$sp(FancyStepDefinition.scala:24)\r\n\tat FancyStepDefinition$$anonfun$4.apply(FancyStepDefinition.scala:23)\r\n\tat FancyStepDefinition$$anonfun$4.apply(FancyStepDefinition.scala:23)\r\n\tat cucumber.api.scala.ScalaDsl$StepBody$$anonfun$apply$2.applyOrElse(ScalaDsl.scala:97)\r\n\tat cucumber.api.scala.ScalaDsl$StepBody$$anonfun$apply$2.applyOrElse(ScalaDsl.scala:95)\r\n\tat scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:36)\r\n\tat cucumber.runtime.scala.ScalaStepDefinition.execute(ScalaStepDefinition.scala:71)\r\n\tat cucumber.runtime.StepDefinitionMatch.runStep(StepDefinitionMatch.java:37)\r\n\tat cucumber.runtime.Runtime.runStep(Runtime.java:298)\r\n\tat cucumber.runtime.model.StepContainer.runStep(StepContainer.java:44)\r\n\tat cucumber.runtime.model.StepContainer.runSteps(StepContainer.java:39)\r\n\tat cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:48)\r\n\tat cucumber.runtime.junit.ExecutionUnitRunner.run(ExecutionUnitRunner.java:91)\r\n\tat org.junit.runners.Suite.runChild(Suite.java:127)\r\n\tat org.junit.runners.Suite.runChild(Suite.java:26)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:309)\r\n\tat cucumber.runtime.junit.ExamplesRunner.run(ExamplesRunner.java:59)\r\n\tat org.junit.runners.Suite.runChild(Suite.java:127)\r\n\tat org.junit.runners.Suite.runChild(Suite.java:26)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:309)\r\n\tat cucumber.runtime.junit.ScenarioOutlineRunner.run(ScenarioOutlineRunner.java:53)\r\n\tat cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:63)\r\n\tat cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:18)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:309)\r\n\tat cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:70)\r\n\tat cucumber.api.junit.Cucumber.runChild(Cucumber.java:93)\r\n\tat cucumber.api.junit.Cucumber.runChild(Cucumber.java:37)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:309)\r\n\tat cucumber.api.junit.Cucumber.run(Cucumber.java:98)\r\n\tat org.junit.runner.JUnitCore.run(JUnitCore.java:160)\r\n\tat com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:74)\r\n\tat com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:211)\r\n\tat com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:67)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\r\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\r\n\tat java.lang.reflect.Method.invoke(Method.java:483)\r\n\tat com.intellij.rt.execution.application.AppMain.main(AppMain.java:134)\r\n\tat ✽.Then the result should equal to 5(single/scenario_outline.feature:9)\r\n",
               "status": "failed"
             },
@@ -1671,7 +1671,7 @@
         "steps": [
           {
             "result": {
-              "duration": 215528,
+              "duration": 176117,
               "status": "passed"
             },
             "line": 7,
@@ -1697,7 +1697,7 @@
           },
           {
             "result": {
-              "duration": 41875,
+              "duration": 22990,
               "status": "passed"
             },
             "line": 8,
@@ -1709,7 +1709,7 @@
           },
           {
             "result": {
-              "duration": 373172,
+              "duration": 314877,
               "error_message": "java.lang.AssertionError: expected:\u003c9\u003e but was:\u003c6\u003e\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat org.junit.Assert.failNotEquals(Assert.java:743)\r\n\tat org.junit.Assert.assertEquals(Assert.java:118)\r\n\tat org.junit.Assert.assertEquals(Assert.java:555)\r\n\tat org.junit.Assert.assertEquals(Assert.java:542)\r\n\tat FancyStepDefinition$$anonfun$4.apply$mcVI$sp(FancyStepDefinition.scala:24)\r\n\tat FancyStepDefinition$$anonfun$4.apply(FancyStepDefinition.scala:23)\r\n\tat FancyStepDefinition$$anonfun$4.apply(FancyStepDefinition.scala:23)\r\n\tat cucumber.api.scala.ScalaDsl$StepBody$$anonfun$apply$2.applyOrElse(ScalaDsl.scala:97)\r\n\tat cucumber.api.scala.ScalaDsl$StepBody$$anonfun$apply$2.applyOrElse(ScalaDsl.scala:95)\r\n\tat scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:36)\r\n\tat cucumber.runtime.scala.ScalaStepDefinition.execute(ScalaStepDefinition.scala:71)\r\n\tat cucumber.runtime.StepDefinitionMatch.runStep(StepDefinitionMatch.java:37)\r\n\tat cucumber.runtime.Runtime.runStep(Runtime.java:298)\r\n\tat cucumber.runtime.model.StepContainer.runStep(StepContainer.java:44)\r\n\tat cucumber.runtime.model.StepContainer.runSteps(StepContainer.java:39)\r\n\tat cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:48)\r\n\tat cucumber.runtime.junit.ExecutionUnitRunner.run(ExecutionUnitRunner.java:91)\r\n\tat org.junit.runners.Suite.runChild(Suite.java:127)\r\n\tat org.junit.runners.Suite.runChild(Suite.java:26)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:309)\r\n\tat cucumber.runtime.junit.ExamplesRunner.run(ExamplesRunner.java:59)\r\n\tat org.junit.runners.Suite.runChild(Suite.java:127)\r\n\tat org.junit.runners.Suite.runChild(Suite.java:26)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:309)\r\n\tat cucumber.runtime.junit.ScenarioOutlineRunner.run(ScenarioOutlineRunner.java:53)\r\n\tat cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:63)\r\n\tat cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:18)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:309)\r\n\tat cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:70)\r\n\tat cucumber.api.junit.Cucumber.runChild(Cucumber.java:93)\r\n\tat cucumber.api.junit.Cucumber.runChild(Cucumber.java:37)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:309)\r\n\tat cucumber.api.junit.Cucumber.run(Cucumber.java:98)\r\n\tat org.junit.runner.JUnitCore.run(JUnitCore.java:160)\r\n\tat com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:74)\r\n\tat com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:211)\r\n\tat com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:67)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\r\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\r\n\tat java.lang.reflect.Method.invoke(Method.java:483)\r\n\tat com.intellij.rt.execution.application.AppMain.main(AppMain.java:134)\r\n\tat ✽.Then the result should equal to 9(single/scenario_outline.feature:9)\r\n",
               "status": "failed"
             },
@@ -1751,7 +1751,7 @@
         "steps": [
           {
             "result": {
-              "duration": 1862987,
+              "duration": 2087957,
               "status": "passed"
             },
             "line": 7,
@@ -1779,7 +1779,7 @@
           },
           {
             "result": {
-              "duration": 43105,
+              "duration": 28326,
               "status": "passed"
             },
             "line": 10,
@@ -1791,7 +1791,7 @@
           },
           {
             "result": {
-              "duration": 31201,
+              "duration": 25042,
               "status": "passed"
             },
             "line": 11,
