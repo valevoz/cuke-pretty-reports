@@ -108,6 +108,14 @@
                         </li>
                     </ul>
                 </div>
+                <div ng-if="scenario.type=='background'">
+                    <b>Background:</b>
+                    <ul>
+                        <li ng-repeat="step in scenario.steps" class="list-unstyled">
+                            <div ng-include="'scenarioStep'"></div>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </alert>
     </div>

@@ -11,6 +11,8 @@ class FancyStepDefinition extends ScalaDsl with EN {
 
   Given("^input") {}
 
+  Given("^background input") {}
+
   Given("^table") { table: DataTable =>}
 
   Given("^(.+) and (.+) as input$") { (a: Int, b: Int) =>
