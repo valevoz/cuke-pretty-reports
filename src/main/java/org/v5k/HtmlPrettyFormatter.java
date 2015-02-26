@@ -12,7 +12,7 @@ import java.net.URL;
 public class HtmlPrettyFormatter extends JSONFormatter {
 
 
-    private static final File ROOT = new File("build/pretty-report");
+    private static final File ROOT = new File("pretty-report");
 
     private final URL parent;
 
