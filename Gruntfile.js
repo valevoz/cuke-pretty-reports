@@ -4,65 +4,56 @@ module.exports = function (grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         clean: {
-            build: {src: ["build"]}
+            build: {src: ["target-grunt"]}
         },
         useminPrepare: {
             options: {
-                dest: 'build/<%= pkg.name %>'
+                dest: 'target-grunt/<%= pkg.name %>'
             },
             html: 'web/index.html'
         },
         usemin: {
-            html: 'build/<%= pkg.name %>/index.html'
+            html: 'target-grunt/<%= pkg.name %>/index.html'
         },
         ngAnnotate: {
             app: {
                 files: {
-                    'build/<%= pkg.name %>/js/app.min.js': ['web/js/pretty-reports.js', 'web/js/filters.js']
+                    'target-grunt/<%= pkg.name %>/app.min.js': ['web/js/pretty-reports.js', 'web/js/filters.js']
                 }
             }
         },
         uglify: {
             minify: {
                 files: {
-                    'build/<%= pkg.name %>/js/app.min.js': ['build/<%= pkg.name %>/js/app.min.js']
+                    'target-grunt/<%= pkg.name %>/app.min.js': ['target-grunt/<%= pkg.name %>/app.min.js']
                 }
             }
         },
         cssmin: {
             minify: {
                 files: {
-                    'build/<%= pkg.name %>/css/main.min.css': ['web/css/main.css']
+                    'target-grunt/<%= pkg.name %>/app.min.css': ['web/css/bootstrap.css','web/css/bootstrap-theme.css','web/css/main.css']
                 }
             }
         },
+        concat: {
+            js: {
+                src: ['web/js/angular.min.js', 'web/js/angular-sanitize.min.js', 'web/js/ui-bootstrap-tpls-0.12.0.min.js', 'target-grunt/<%= pkg.name %>/app.min.js'],
+                dest: 'target-grunt/<%= pkg.name %>/app.min.js'
+            }
+        },
         copy: {
-            vendor: {
-                files: [
-                    {
-                        expand: 'true',
-                        cwd: 'web/js/vendor/',
-                        src: '*',
-                        dest: 'build/<%= pkg.name %>/js/vendor/'
-                    }, {
-                        expand: 'true',
-                        cwd: 'web/css/vendor/',
-                        src: '*',
-                        dest: 'build/<%= pkg.name %>/css/vendor/'
-                    }
-                ]
-            },
             html: {
                 expand: 'true',
                 cwd: 'web/',
-                src: '*',
-                dest: 'build/<%= pkg.name %>/'
+                src: '*.html',
+                dest: 'target-grunt/<%= pkg.name %>/'
             },
-            images: {
+            favicon: {
                 expand: 'true',
-                cwd: 'web/images',
-                src: '*',
-                dest: 'build/<%= pkg.name %>/images'
+                cwd: 'web/',
+                src: 'favicon.ico',
+                dest: 'target-grunt/<%= pkg.name %>/'
             }
         },
         chmod: {
@@ -70,7 +61,7 @@ module.exports = function (grunt) {
                 mode: '755'
             },
             target: {
-                src: ['build/**']
+                src: ['target-grunt/**']
             }
         }
     });
@@ -80,10 +71,11 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-usemin');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-chmod');
 
-    grunt.registerTask('default', ['clean', 'useminPrepare', 'ngAnnotate', 'uglify:minify', 'cssmin:minify', 'copy', 'usemin', 'chmod']);
+    grunt.registerTask('default', ['clean', 'useminPrepare', 'ngAnnotate', 'uglify:minify', 'concat', 'cssmin:minify', 'copy', 'usemin', 'chmod']);
 
 };
