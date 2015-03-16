@@ -76,6 +76,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-chmod');
 
-    grunt.registerTask('default', ['clean', 'useminPrepare', 'ngAnnotate', 'uglify:minify', 'concat', 'cssmin:minify', 'copy', 'usemin', 'chmod']);
+    grunt.registerTask('default', ['useminPrepare', 'ngAnnotate', 'uglify:minify', 'concat', 'cssmin:minify', 'copy', 'usemin', 'chmod']);
 
 };

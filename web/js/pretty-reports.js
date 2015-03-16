@@ -161,89 +161,96 @@ app.controller('ReportCtrl', function ($scope, $filter, $http) {
         }
     };
 
-    $http.get('data.json').success(function (features) {
-        var storage = {};
-        storage.children = [];
-        features.map(function (feature) {
-            var toHierarchicalView = function (uri, featureDetails) {
-                var levels = uri.split("/"),
-                    currentLevel = storage;
+    $scope.storage.features = [];
+    loadDataFiles(1);
 
-                for (var i = 0; i < levels.length - 1; i++) {
-                    if (!currentLevel[levels[i]]) {
-                        currentLevel[levels[i]] = {};
-                        currentLevel[levels[i]].children = [];
-                        currentLevel[levels[i]].details = {
-                            total: 0,
-                            failed: 0,
-                            passed: 0,
-                            skipped: 0,
-                            duration: 0
+    function loadDataFiles(dataIndex) {
+        $http.get('data' + dataIndex + '.json').success(function (features) {
+            var storage = {};
+            storage.children = [];
+            features.map(function (feature) {
+                var toHierarchicalView = function (uri, featureDetails) {
+                    var levels = uri.split("/"),
+                        currentLevel = storage;
+
+                    for (var i = 0; i < levels.length - 1; i++) {
+                        if (!currentLevel[levels[i]]) {
+                            currentLevel[levels[i]] = {};
+                            currentLevel[levels[i]].children = [];
+                            currentLevel[levels[i]].details = {
+                                total: 0,
+                                failed: 0,
+                                passed: 0,
+                                skipped: 0,
+                                duration: 0
+                            };
+                        }
+                        currentLevel = currentLevel[levels[i]];
+                        currentLevel.details = {
+                            total: currentLevel.details.total + featureDetails.total,
+                            passed: currentLevel.details.passed + featureDetails.passed,
+                            failed: currentLevel.details.failed + featureDetails.failed,
+                            skipped: currentLevel.details.skipped + featureDetails.skipped,
+                            duration: currentLevel.details.duration + parseFloat(featureDetails.duration)
                         };
                     }
-                    currentLevel = currentLevel[levels[i]];
-                    currentLevel.details = {
-                        total: currentLevel.details.total + featureDetails.total,
-                        passed: currentLevel.details.passed + featureDetails.passed,
-                        failed: currentLevel.details.failed + featureDetails.failed,
-                        skipped: currentLevel.details.skipped + featureDetails.skipped,
-                        duration: currentLevel.details.duration + parseFloat(featureDetails.duration)
-                    };
-                }
 
-                currentLevel.children.push(featureDetails)
-            };
-
-            var scenarios = [];
-            if (feature.elements && feature.elements.length) {
-                feature.elements.map(function (scenario) {
-                    if (scenario.type == "scenario") {
-                        scenarios.push(new ScenarioDetails(scenario.name, scenario.steps).toJson);
-                    }
-                });
-            }
-
-            var featureDetails = new FeatureDetails(feature, scenarios).toJson;
-            toHierarchicalView(feature.uri, featureDetails)
-        });
-
-        var items = [];
-        var toFlatView = function (storage, index) {
-            var parentFeature = function (details, name, level) {
-                return {
-                    name: name,
-                    level: level,
-                    parent: true,
-                    total: details.total,
-                    passed: details.passed,
-                    failed: details.failed,
-                    skipped: details.skipped,
-                    duration: parseFloat(details.duration).toFixed(2)
+                    currentLevel.children.push(featureDetails)
                 };
+
+                var scenarios = [];
+                if (feature.elements && feature.elements.length) {
+                    feature.elements.map(function (scenario) {
+                        if (scenario.type == "scenario") {
+                            scenarios.push(new ScenarioDetails(scenario.name, scenario.steps).toJson);
+                        }
+                    });
+                }
+
+                var featureDetails = new FeatureDetails(feature, scenarios).toJson;
+                toHierarchicalView(feature.uri, featureDetails)
+            });
+
+            var items = [];
+            var toFlatView = function (storage, index) {
+                var parentFeature = function (details, name, level) {
+                    return {
+                        name: name,
+                        level: level,
+                        parent: true,
+                        total: details.total,
+                        passed: details.passed,
+                        failed: details.failed,
+                        skipped: details.skipped,
+                        duration: parseFloat(details.duration).toFixed(2)
+                    };
+                };
+
+                for (var key in storage) {
+                    if (storage.hasOwnProperty(key) && key != "children" && key != "details") {
+                        items.push(parentFeature(storage[key]["details"], key, index));
+                        toFlatView(storage[key], index + 1)
+                    }
+                }
+
+                var children = storage.children || [];
+                items = items.concat(children.map(function (child) {
+                    child.level = index + 1;
+                    return child;
+                }));
             };
 
-            for (var key in storage) {
-                if (storage.hasOwnProperty(key) && key != "children" && key != "details") {
-                    items.push(parentFeature(storage[key]["details"], key, index));
-                    toFlatView(storage[key], index + 1)
-                }
+            toFlatView(storage, 0);
+
+            $scope.storage.features = $scope.storage.features.concat(items);
+            loadDataFiles(++dataIndex);
+        }).error(function (error, status) {
+            if ($scope.storage.features.length == 0) {
+                alert("Source JSON file not found.");
+                console.log(error);
+                console.log(status);
             }
-
-            var children = storage.children || [];
-            items = items.concat(children.map(function (child) {
-                child.level = index + 1;
-                return child;
-            }));
-        };
-
-        toFlatView(storage, 0);
-
-        $scope.storage.features = items;
-    }).error(function (error, status) {
-        alert("Source JSON file not found.");
-        console.log(error);
-        console.log(status);
-        $scope.storage.features = [];
-    });
+        });
+    }
 
 });
