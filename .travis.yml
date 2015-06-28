@@ -1,5 +1,7 @@
 language: scala
+
 scala:
    - 2.11.6
 
-mvn test
+script:
+  - mvn test
